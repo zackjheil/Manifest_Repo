@@ -1,17 +1,19 @@
+/* CSS for the entire App */
 .App {
   text-align: center;
 }
-
+/*App logo CSS*/
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+/*App animation*/
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+/*App animation key frames */
 
 @keyframes App-logo-spin {
   from {
@@ -21,6 +23,7 @@
     transform: rotate(360deg);
   }
 }
+
 #notes_search_form{
   display: flex;
   flex-direction: column;
@@ -124,4 +127,16 @@ background-color:white;
 
 Link{
   padding: 0px;
+}
+/*Jogie's*/
+#notes{
+  min-height: 80vh;
+  background-color: gray;
+}
+/*Jogie's*/
+#notes_title{
+  background-color: gray;
+}
+[contenteditable]{
+  outline: 0px solid transparent;
 }
