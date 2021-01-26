@@ -8,13 +8,13 @@ import tempMenu from './tempMenu/tempMenu';
 import MenuBar from './MenuBar/MenuBar';
 import MenuOps from './MenuOPS/MenuOPS';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
+import NavExpand from './NavExpand/NavExpand';
 
 function App() {
   return (    
     <div className="App">
-      <Router>  
-        <MenuBar/>
-        <MenuOps/>
+      <Router>
+          <NavExpand/>
           <Switch>
             <Route path="/" exact component={Main_page} />
             <Route path="/noteboards/noteboard_01" component={Noteboard} />
