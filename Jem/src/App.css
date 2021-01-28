@@ -173,17 +173,31 @@ float: right;
 background-color:white;
 }
 
+.bottomNav
+{
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
 Link{
   padding: 0px;
 }
-/*Jogie's*/
+/*When changing any type of measurements make sure you include "min" before it otherwise it won't allow to expand when creating notes!!!*/
 #notes{
-  min-height: 80vh;
+  min-height: 20vh;
+  margin-right: 10px;
+  margin-left: 10px;
+  
   background-color: gray;
 }
 /*Jogie's*/
 #notes_title{
-  background-color: gray;
+  min-height: 8vh;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 [contenteditable]{
   outline: 0px solid transparent;

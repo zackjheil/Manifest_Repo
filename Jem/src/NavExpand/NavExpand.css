@@ -2,6 +2,7 @@
 {
     background-color:aliceblue;
     min-height: 3rem;
+    position: fixed;
 }
 .navTitle
 {
