@@ -1,9 +1,3 @@
-.App {
-  text-align: left;
-  
-  
-}
-
 /* CSS for the entire App */
 .App {
   text-align: center;
@@ -138,7 +132,6 @@ Link{
 #notes{
   min-height: 80vh;
   background-color: gray;
-
 }
 /*Jogie's*/
 #notes_title{

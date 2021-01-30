@@ -1,0 +1,33 @@
+.bottomNav
+{
+    background-color:rgb(153, 204, 255);
+    position: fixed;
+    height: 3rem;
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+
+}
+
+.bottomContainer
+{
+    background-color: white;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px solid grey;
+    border-radius: 25px;
+    text-align: left;
+
+}
+
+.bottomLink
+{
+    float: center;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+ 
