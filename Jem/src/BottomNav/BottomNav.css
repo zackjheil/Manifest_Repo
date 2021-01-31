@@ -12,22 +12,27 @@
 .bottomContainer
 {
     background-color: white;
-    width: 70%;
+    width: 90%;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border: 2px solid grey;
     border-radius: 25px;
-    text-align: left;
 
 }
 
 .bottomLink
 {
-    float: center;
     text-decoration: none;
     color: black;
-    text-align: center;
     font-size: 15px;
-    padding: 10px;
+    position: absolute;
+    left: 2.5rem;
+
+}
+
+.bottomAdd
+{
+    /*Someone please do this because I can't get this thing to move to the right without the container collapsing :(*/
 }
  
