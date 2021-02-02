@@ -1,21 +1,18 @@
 import React, {Component} from 'react';
 import '../App.css';
-//import {HiMenu, HiUserCircle} from 'react-icons/hi';//
+import {HiUserCircle} from 'react-icons/hi';
 
-class MenuOPS extends Component {
-    render()
-    {
-        return (
-                <ul cLass="dropdownMenu">
-                    <li className="MenuOp"><h1> Home </h1></li>
-                    <li className="MenuOp"><h1> Profile </h1></li>
-                    <li className="MenuOp"><h1> Options </h1></li>
-                    <li className="MenuOp"><h1> TEXT </h1></li>
-                    <li className="MenuOp"><h1> TEXT </h1></li>
-                    <li className="MenuOp"><h1> TEXT </h1></li>
-                </ul>
-        )
-    }
+const MenuOPS = () =>
+{
+    return(
+        <div className="HamburgerMenu">
+            <HiUserCircle className="menuUser"/>
+            <a className="menulist" href="/">Main</a>
+            <a className="menulist" href="/">Lists</a>
+            <a className="menulist" href="/">Reminders</a>
+            <a className="menulist" href="/">Emotions Log</a>
+        </div>
+    )
 }
-export default MenuOPS;
 
+export default MenuOPS;

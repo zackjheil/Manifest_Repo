@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 function Main() {
     return(
       <div className="Main">
-        <MenuBar />
         <CardGroup className="CardGroup">
             <Link to="/noteboards/noteboard_01">
                 <Boards title="Board 1"/>

@@ -10,8 +10,8 @@ class MenuBar extends Component
     {
         return(
             <menu className="MenuBar">
-                <Link className="menuLink" to="/tempMenu/tempMenu"><HiMenu/></Link>
-                <body className="menu-title">My Boards</body>
+                <Link className="menuLink"><HiMenu/></Link>
+                <body className="menu-title">Manifest</body>
                 <HiUserCircle className="user" />                
             </menu>
         )
