@@ -15,6 +15,9 @@ class BottomNav extends Component
                     <OverlayTrigger trigger="click" placement="top" overlay={Popover}>
                         <img className="bottomAdd" src={AddSymbol}/>
                     </OverlayTrigger>
+                    {/* OverlayTrigger is the actual trigger in order to make the popover appear
+                    
+                    !! You can change where the popover goes by editing "placemen" either top, right, left, or bottom!!!*/}
                 </div>
             </nav>
         )

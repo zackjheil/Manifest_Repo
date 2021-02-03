@@ -9,6 +9,7 @@ import MenuBar from './MenuBar/MenuBar';
 import MenuOps from './MenuOPS/MenuOPS';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import NavExpand from './NavExpand/NavExpand';
+import textEditor from './notes/textEditor';
 
 function App() {
   return (    
@@ -20,6 +21,7 @@ function App() {
             <Route path="/noteboards/noteboard_01" component={Noteboard} />
             <Route path="/notes/note_01" component={note_01} />
             <Route path="/notes/note_02" component={note_02} />
+            <Route path="/notes/textEditor" component={textEditor} />
           </Switch>
       </Router>
     </div>

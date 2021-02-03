@@ -26,13 +26,16 @@
     text-decoration: none;
     color: black;
     font-size: 15px;
-    position: absolute;
+    position: relative;
+    align-self: flex-start;
     left: 2.5rem;
 
 }
 
 .bottomAdd
 {
-    /*Someone please do this because I can't get this thing to move to the right without the container collapsing :(*/
+    display:flex;
+    flex-direction: row;
+    float:right;/*Thanks Argha!! - Jem */
 }
  
