@@ -1,6 +1,5 @@
 import './App.css';
 import React, {Component} from 'react';
-import MenuBar from './MenuBar/MenuBar';
 import Boards from './Boards/Boards';
 import { CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

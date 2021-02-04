@@ -24,166 +24,32 @@
   }
 }
 
-#notes_search_form{
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-.note_board{
-  list-style: none;
-}
-.NB_body{
-  display: flex;
-  flex-direction: column;
-  min-height: 85vh;
-}
-.navbar{
-  list-style: none;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: darkslategray;
-  color: white;
-  min-height: 5vh;
-  align-items: center;
-}
 
-.Main{
+.Main{/*CSS for the whole home page*/
   text-align: left;
   
   
 }
 
-.MenuBar
-{
-    background-color: aliceblue;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    margin-top: auto;
-}
-
-.menuLink
-{
-    position: fixed;
-    left: 2%;
-    font-size: 2rem;
-}
-
-.user
-{
-    position: fixed;
-    right: 2%;
-    font-size: 2em;
-}
-
-.menu-title
-{
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boards
+.boards /* Universal CSS for all the card card elements in the App */
 {
     background-color: grey;
     margin: 2%;
     width: 7em;
     height: 10em;
 }
-.CardGroup
+.CardGroup /* CSS for the Home page are where the boards are displayed*/
 {
     position: auto;
     width: 80%;
     align-items: center;
 }
 
-/* BEGINNING OF CSS FOR MENU*/
-
-.dropdownMenu{
-  /*list-style: none;*/
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  height: 100vh;
-  text-align: left;
-  max-width: 20vw;
-  min-height: 95vh;
-  background-color: gray;
-  padding: 0px;
-  left: 0;
-}
-
-.HamburgerMenu
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: gray;
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-
-  @media (max-width)
-  {
-    width: 100%;
-  }
-}
-
-.menulist
-{
-  font-size: 1.5rem;
-  padding: 2rem 0;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  color: black;
-}
-
-.menuUser
-/*this is for the user icon in menu*/
-{
-  font-size: 5rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  top: auto;
-}
-
-.MenuOP{
-  min-width: 20vw;
-  min-height: 20vh;
-
-}
-
-/*END OF CSS FOR MENU*/
-
-.escapeSequence{
- min-height:95vh;
- min-width: 80vw;
-float: right;
-background-color:white;
-}
-
-.bottomNav
-{
-  background-color: aliceblue;
-  overflow: hidden;
-}
-
-Link{
+Link{ /* CSS for all the 'Link' elements in the App */
   padding: 0px;
 }
 /*When changing any type of measurements make sure you include "min" before it otherwise it won't allow to expand when creating notes!!!*/
-#notes{
+#notes{ /* CSS for the note display area on the Note Page */
   min-height: 20vh;
   margin-right: 10px;
   margin-left: 10px;
@@ -194,26 +60,29 @@ Link{
   align-items: center;
 }
 
-#notes_title{
+#notes_title{ /* CSS for the title of the Note Page */
   min-height: 8vh;
   margin-right: 10px;
   margin-left: 10px;
   font-size: 40px;
   background-color: lightskyblue;
 }
-[contenteditable]{
+[contenteditable]{ /* things like the title tag on the Note Page have a outline by default. This is to erase that outline*/
   outline: 0px solid transparent;
 }
 
-.picture{
+.picture{/* CSS for Images displayed on the Note Page*/
   max-width: 50vw;
   max-height: 50vh;
 }
-#txtEditor{
+.txtNote{ /*CSS for every text note made throught the Text Editor Page */
+  max-width: 90%;
+}
+#txtEditor{/* Text Editor Page textarea CSS*/
   min-height:50vh;
   min-width: 100vw;
 }
-#dummy{
+#dummy{ /* CSS for a hidden div on the Text Editor Page(purely for programming purposes)*/
   display: none;
   visibility: hidden;
 }

@@ -8,7 +8,7 @@ class NavExpand extends Component
     render()
     {
         return(
-            <Navbar class="navbar sticky-top" collapseOnSelect expand="menuButton" className="navExpand">
+            <Navbar collapseOnSelect expand="menuButton" className="navExpand">
                 <Navbar.Brand className="navTitle" href="/">Manifest</Navbar.Brand>
                 <Navbar.Toggle/>
                 <Navbar.Collapse>
