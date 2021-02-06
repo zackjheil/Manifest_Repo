@@ -96,7 +96,7 @@ render(){
                 <input type="submit" onClick={this.filePost}/>
                 <button  onClick={this.displayTextEditor}>Text Editor</button>
                 <Link to="/noteboards/noteboard_01"> 
-                  <h4>Back</h4>
+                  <h4 id="backButton">Back</h4>
                 </Link>      
               </div>
       )

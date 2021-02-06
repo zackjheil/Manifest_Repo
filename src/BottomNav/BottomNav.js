@@ -17,7 +17,7 @@ class BottomNav extends Component
                     </OverlayTrigger>
                     {/* OverlayTrigger is the actual trigger in order to make the popover appear
                     
-                    !! You can change where the popover goes by editing "placemen" either top, right, left, or bottom!!!*/}
+                    !! You can change where the popover goes by editing "placement" either top, right, left, or bottom!!!*/}
                 </div>
             </nav>
         )
