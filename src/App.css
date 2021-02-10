@@ -28,7 +28,6 @@
 .Main{/*CSS for the whole home page*/
   text-align: left;
   
-  
 }
 
 .boards /* Universal CSS for all the card card elements in the App */
@@ -85,4 +84,12 @@ Link{ /* CSS for all the 'Link' elements in the App */
 #dummy{ /* CSS for a hidden div on the Text Editor Page(purely for programming purposes)*/
   display: none;
   visibility: hidden;
+}
+#Note1
+{
+  background-color: greenyellow;
+}
+#Board1
+{
+  background-color: blue;
 }

@@ -6,8 +6,8 @@ import {Card} from 'react-bootstrap';
 const card = (props) => 
 {
     return(
-        <Card className="boards">
-            <Card.Title id="boardsTitle">{props.title}</Card.Title>
+        <Card>
+            <Card.Title>{props.title}</Card.Title>
             {/* ID's can be identified using # in the CSS file */}
         </Card>
     )
