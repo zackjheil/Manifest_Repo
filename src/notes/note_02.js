@@ -83,22 +83,6 @@ txtPost(){
   else{
     this.displayNote();
   }
-<<<<<<< Updated upstream
-  render(){
-      if (this.state.displayNotePage === true){//condirional render of Note Page
-        return (
-                <div>
-                  <div id="notes_title" placeholder="Title" contentEditable="true"></div>
-                  <br/>
-                  <div id="notes" placeholder="type something" onClick={this.displayTextEditor}>
-                  </div>
-                  <input type="file" onChange={this.handleChange}/>
-                  <input type="submit" onClick={this.filePost}/>
-                  <button  onClick={this.displayTextEditor}>Text Editor</button>
-                  <Link to="/noteboards/noteboard_01"> 
-                    <h4 id="backButton">Back</h4>
-                  </Link>      
-=======
 }
 render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
@@ -107,7 +91,6 @@ render(){
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
                 <div id="notes" placeholder="type something" contentEditable="true">{/*onClick={this.displayTextEditor}*/}
->>>>>>> Stashed changes
                 </div>
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
