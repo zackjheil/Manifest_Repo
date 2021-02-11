@@ -17,7 +17,7 @@ constructor (props){
   this.handleChange = this.handleChange.bind(this);
   this.handleTxtChange =this.handleTxtChange.bind(this);
   this.filePost= this.filePost.bind(this);
-  this.displayTextEditor=this.displayTextEditor.bind(this);
+  /*this.displayTextEditor=this.displayTextEditor.bind(this);*/
   this.displayNote=this.displayNote.bind(this);
   this.txtPost=this.txtPost.bind(this);
 }
@@ -35,13 +35,13 @@ handleTxtChange(event){ // function to retrieve the test from the textarea in th
   })
   
 }
-displayTextEditor(){ // fumction to display the Text Editor Page
+/*displayTextEditor(){ // fumction to display the Text Editor Page
   this.setState({
     displayNotePage: false,
     displayTextEditorPage: true
   })
 
-}
+}*/
 displayNote(){//function to display the Note Page
   this.setState({
     displayNotePage: true,
@@ -90,18 +90,18 @@ render(){
               <div>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
-                <div id="notes" placeholder="type something" onClick={this.displayTextEditor}>
+                <div id="notes" placeholder="type something" contentEditable="true">{/*onClick={this.displayTextEditor}*/}
                 </div>
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
-                <button  onClick={this.displayTextEditor}>Text Editor</button>
+                {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
                 <Link to="/noteboards/noteboard_01"> 
                   <h4 id="backButton">Back</h4>
                 </Link>      
               </div>
       )
     } 
-    else if (this.state.displayTextEditorPage === true){// conditional render of Text Editor Page
+    /*else if (this.state.displayTextEditorPage === true){// conditional render of Text Editor Page
       return(
         <div>
             <textarea id="txtEditor" onChange={this.handleTxtChange}/>
@@ -109,7 +109,7 @@ render(){
             <div id="dummy"></div>
         </div>
     )
-    }
+    }*/
 }
 }
 
