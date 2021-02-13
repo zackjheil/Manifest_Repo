@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import '../Boards/Boards.css';
 import {Card} from 'react-bootstrap';
 //import note from './note.jpg';
 

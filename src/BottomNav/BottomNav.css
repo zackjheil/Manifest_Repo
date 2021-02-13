@@ -1,41 +1,46 @@
 .bottomNav
 {
-    background-color:rgb(153, 204, 255);
-    position: fixed;
-    height: 3rem;
-    width: 100%;
-    margin-bottom: 0;
-    overflow: hidden;
-
+   background-color:rgb(153, 204, 255);
+   position: fixed;
+   bottom:0;
+   height: 3rem;
+   width: 100%;
+   margin-bottom: 0;
+   overflow: hidden;
 }
-
+ 
 .bottomContainer
 {
-    background-color: white;
-    width: 90%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid grey;
-    border-radius: 25px;
-
+   background-color: white;
+   width: 90%;
+   margin-top: 10px;
+   margin-left: auto;
+   margin-right: auto;
+   border: 2px solid;
+   border-image-source: linear-gradient(to right, #E4BBFA, #B3A7FF);
+   border-image-slice: 1;
+   border-radius: 25px;
+   text-align: center;
+ 
 }
-
+ 
 .bottomLink
 {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    position: relative;
-    align-self: flex-start;
-    left: 2.5rem;
-
+   float: center;
+   text-decoration: none;
+   color: black;
+   font-size: 15px;
+   position: relative;
+   align-self: flex-start;
+   left: 1.5rem;
+   text-align: center;
 }
-
+ 
 .bottomAdd
 {
-    display:flex;
-    flex-direction: row;
-    float:right;/*Thanks Argha!! - Jem */
+   display:flex;
+   flex-direction: row;
+   float:right;/*Thanks Argha!! - Jem */
 }
+
  
