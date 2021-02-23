@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import AddBar from '../AddContent/AddBar';
 
 export class note_01 extends Component {
   
@@ -97,7 +98,8 @@ render(){
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
                 <Link to="/noteboards/noteboard_01"> 
                   <h4 id="backButton">Back</h4>
-                </Link>      
+                </Link> 
+                <AddBar></AddBar>
               </div>
       )
     } 
