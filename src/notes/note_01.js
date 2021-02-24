@@ -3,6 +3,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
+import Localbase from 'localbase'
 
 export class note_01 extends Component {
   
@@ -115,5 +116,27 @@ render(){
     }*/
 }
 }
+let db = new Localbase('Stored')
+// This Creates the button
+var button = document.createElement("button");
+button.innerHTML = "Do Something";
+
+// This puts the button in
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+
+// This is the button function
+button.addEventListener ("click", Added, {
+});
+
+function Added() {
+db.collection('notes').add({
+  id:1,
+  //Name: 'ASDASDASD',
+  Content: document.getElementById('notes_title')
+  //content : 'Hi there'
+})
+  }
+
 
 export default note_01;
