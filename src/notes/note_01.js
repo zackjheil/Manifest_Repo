@@ -3,7 +3,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
-import Localbase from 'localbase'
+import Localbase from 'localbase';
 
 export class note_01 extends Component {
   
@@ -86,22 +86,26 @@ txtPost(){
   else{
     this.displayNote();
   }
+
 }
+
 render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
       return (
-              <div>
+              <div className="note">
                 <Link className="backButton" to="/noteboards/noteboard_01">
                 <IoIcons.IoMdArrowRoundBack />
                 </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
-                <div id="notes" placeholder="type something" contentEditable="true">{/*onClick={this.displayTextEditor}*/}
+                <div id="notes" placeholder="type something"> {/*contentEditable="true"{/*onClick={this.displayTextEditor}*/}
+                <div>I-m here</div>
                 </div>
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
                 <AddBar></AddBar>
+                <button type="submit" onClick={Added}>Do Something</button>
               </div>
       )
     } 
@@ -118,25 +122,24 @@ render(){
 }
 let db = new Localbase('Stored')
 // This Creates the button
-var button = document.createElement("button");
-button.innerHTML = "Do Something";
+//var button = document.createElement("button");
+//button.innerHTML = "Do Something";
 
 // This puts the button in
-var body = document.getElementsByTagName("body")[0];
-body.appendChild(button);
+//var body = document.getElementsByClassName("note");
+//body.appendChild(button);
 
 // This is the button function
-button.addEventListener ("click", Added, {
-});
+//button.addEventListener ("click", Added, {
+//});
 
-function Added() {
-db.collection('notes').add({
+export function Added() {
+db.collection('n1').add({
   id:1,
   //Name: 'ASDASDASD',
-  Content: document.getElementById('notes_title')
+  Content: document.getElementById('notes'),
   //content : 'Hi there'
 })
+
   }
-
-
 export default note_01;

@@ -3,7 +3,6 @@ import '../App.css';
 import '../Boards/Boards.css';
 import { Link } from 'react-router-dom';
 import { Card, CardGroup } from 'react-bootstrap';
-import Boards from '../Boards/Boards';
 import BottomNav from '../BottomNav/BottomNav';
 import * as IoIcons from 'react-icons/io';
 

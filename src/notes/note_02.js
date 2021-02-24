@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase'
 
@@ -89,7 +90,7 @@ txtPost(){
 render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
       return (
-              <div>
+              <div className="note">
                 <Link className="backButton" to="/noteboards/noteboard_01">
                 <IoIcons.IoMdArrowRoundBack />
                 </Link>
@@ -100,9 +101,8 @@ render(){
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
-                <Link to="/noteboards/noteboard_01"> 
-                  <h4>Back</h4>
-                </Link>      
+                <AddBar></AddBar>
+                <button type="submit" onClick={Added}>Do Something</button>
               </div>
       )
     } 
@@ -117,5 +117,27 @@ render(){
     }*/
 }
 }
+let db = new Localbase('Stored')
+// This Creates the button
+//var button = document.createElement("button");
+//button.innerHTML = "Do Something";
+
+// This puts the button in
+//var body = document.getElementsByClassName("note");
+//body.appendChild(button);
+
+// This is the button function
+//button.addEventListener ("click", Added, {
+//});
+
+export function Added() {
+db.collection('n1').add({
+  id:1,
+  //Name: 'ASDASDASD',
+  Content: document.getElementById('notes'),
+  //content : 'Hi there'
+})
+
+  }
 
 export default note_02;

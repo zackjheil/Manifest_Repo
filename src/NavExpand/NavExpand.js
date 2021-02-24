@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import './NavExpand.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from 'react-sidebar';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
@@ -38,7 +37,7 @@ class NavExpand extends Component
     {
         return(
             <div>
-            <Navbar class="navbar sticky-top" collapseOnSelect expand="menuButton" className="navExpand">
+            <Navbar collapseOnSelect expand="menuButton" className="navExpand">
                 <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={this.showNav}/>
                 </Link>

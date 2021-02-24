@@ -13,7 +13,7 @@ class BottomNav extends Component
                 <div className="bottomContainer">
                     <a  className="bottomLink" href="/notes/note_01">Type something...</a>
                     <OverlayTrigger trigger="click" placement="top" overlay={Popover}>
-                        <img className="bottomAdd" src={AddSymbol}/>
+                        <img alt="#" className="bottomAdd" src={AddSymbol}/>
                     </OverlayTrigger>
                     {/* OverlayTrigger is the actual trigger in order to make the popover appear
                     

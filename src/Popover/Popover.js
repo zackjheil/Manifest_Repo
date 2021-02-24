@@ -2,7 +2,7 @@ import React from 'react';
 import {Popover} from 'react-bootstrap';
 import './Popover.css';
 
-{/*THE CSS IS IN POPOVER.CSS DO NOT TRY TO FIND IT IN APP.CSS*/}
+/*THE CSS IS IN POPOVER.CSS DO NOT TRY TO FIND IT IN APP.CSS*/
 
 const popover =
 (
