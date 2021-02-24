@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 import { Card, CardGroup } from 'react-bootstrap';
 import Boards from '../Boards/Boards';
 import BottomNav from '../BottomNav/BottomNav';
+import * as IoIcons from 'react-icons/io';
 
 function noteboard_01() {
   return (
     <div>
+        <Link className="backButton" to="/">
+            <IoIcons.IoMdArrowRoundBack />
+        </Link>
         <h3>Notes</h3>
         <CardGroup className="allNotes"> {/** className to change all notes */}
           <Link to="/notes/note_01">

@@ -4,7 +4,8 @@ import './NavExpand.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from 'react-sidebar';
 import { Link } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa'
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
 
 
 class NavExpand extends Component
@@ -47,7 +48,7 @@ class NavExpand extends Component
             <ul className="navigation">
                 <li className="navToggle">
                     <Link to="#" className="menu-bars">
-                        <FaIcons.FaBars onClick={this.showNav}/>
+                        <AiIcons.AiOutlineClose onClick={this.showNav}/>
                     </Link>
                 </li>
                 <li className="navLinks">

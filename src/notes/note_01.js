@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import AddBar from '../AddContent/AddBar';
+import * as IoIcons from 'react-icons/io';
 
 export class note_01 extends Component {
   
@@ -89,6 +90,9 @@ render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
       return (
               <div>
+                <Link className="backButton" to="/noteboards/noteboard_01">
+                <IoIcons.IoMdArrowRoundBack />
+                </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
                 <div id="notes" placeholder="type something" contentEditable="true">{/*onClick={this.displayTextEditor}*/}
@@ -96,9 +100,6 @@ render(){
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
-                <Link to="/noteboards/noteboard_01"> 
-                  <h4 id="backButton">Back</h4>
-                </Link> 
                 <AddBar></AddBar>
               </div>
       )

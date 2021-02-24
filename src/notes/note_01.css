@@ -4,3 +4,9 @@
     text-align: left;
     padding: 10px;
 }
+.backButton{
+    justify-content: start;
+    font-size: 2rem;
+    min-width: 10vw;
+    min-height: 10vw;
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import * as IoIcons from 'react-icons/io';
 
 export class note_02 extends Component {
   
@@ -88,6 +89,9 @@ render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
       return (
               <div>
+                <Link className="backButton" to="/noteboards/noteboard_01">
+                <IoIcons.IoMdArrowRoundBack />
+                </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
                 <div id="notes" placeholder="type something" contentEditable="true">{/*onClick={this.displayTextEditor}*/}
