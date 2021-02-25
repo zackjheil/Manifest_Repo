@@ -98,8 +98,7 @@ render(){
                 </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
-                <div id="notes" placeholder="type something"> {/*contentEditable="true"{/*onClick={this.displayTextEditor}*/}
-                <div>I-m here</div>
+                <div id="notes" placeholder="type something"contentEditable="true">{/*onClick={this.displayTextEdito*/}
                 </div>
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
