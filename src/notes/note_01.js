@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase';
-
+var counter=1;
 export class note_01 extends Component {
   
 /* Constructor object declared with a state of null */
@@ -16,13 +16,13 @@ constructor (props){
      displayTextEditorPage: false,
      txtNote: "",
   }
-
   this.handleChange = this.handleChange.bind(this);
   this.handleTxtChange =this.handleTxtChange.bind(this);
   this.filePost= this.filePost.bind(this);
   /*this.displayTextEditor=this.displayTextEditor.bind(this);*/
   this.displayNote=this.displayNote.bind(this);
   this.txtPost=this.txtPost.bind(this);
+
 }
 
 /* function to get the URL of the selected image*/
@@ -30,13 +30,11 @@ handleChange(event){
   this.setState({
     selectedFile: URL.createObjectURL(event.target.files[0])
   })
-  
 }
 handleTxtChange(event){ // function to retrieve the test from the textarea in the Text Editor Page
   this.setState({
     txtNote: event.target.value
   })
-  
 }
 /*displayTextEditor(){ // fumction to display the Text Editor Page
   this.setState({
@@ -50,7 +48,7 @@ displayNote(){//function to display the Note Page
     displayNotePage: true,
     displayTextEditorPage: false
   })
-
+  console.log("file changed");
 }
 
 filePost(){
@@ -59,11 +57,14 @@ filePost(){
     var output= document.getElementById('notes');// gets the editable note area 
     var photo = document.createElement('img');// creates a new image element
     photo.className="picture"; //sets the className of the image as 'picture'
+    photo.id=counter;
+    counter+=1;
     photo.setAttribute("src", this.state.selectedFile);//assigns the src of the new image element to the src identified in the handleChange function  
     output.appendChild(photo);//appends the new image elemet to the div as a child element
     this.setState({ //sets the state of the 'selectedFile' element of the contructor to null to reset the selection
       selectedFile: null,
     })
+    console.log('file posted');
   }
   else{
 
@@ -132,13 +133,34 @@ let db = new Localbase('Stored')
 //button.addEventListener ("click", Added, {
 //});
 
-export function Added() {
-db.collection('n1').add({
-  id:1,
-  //Name: 'ASDASDASD',
-  Content: document.getElementById('notes'),
-  //content : 'Hi there'
-})
+export function showAll(){
 
+}
+
+export function Added() {
+  db.collection('n1').add({
+    id:0,
+    ncount:counter
+  })
+for(var i=1; i<counter; i++){
+  var ele = document.getElementById(i);
+  if(ele.getAttribute("className")==="picture"){
+    db.collection('n1').add({
+      id:i,
+      class:ele.className,
+      type:'image',
+      iurl:ele.getAttribute("src")
+    })
+    
+  }
+  //db.collection('n1').add({
+  //id:i,
+  //Name: 'ASDASDASD',
+  //Content: document.getElementById('notes'),
+  //content : 'Hi there'
+//})
+}
+console.log('files to db');
+console.log(counter);
   }
 export default note_01;
