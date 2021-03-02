@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import '../App.css';
+import './note_01.css';
 import { Link } from 'react-router-dom';
 import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase';
+import autosize from 'autosize';
 var counter=1;
 export class note_01 extends Component {
   
@@ -36,6 +38,7 @@ handleTxtChange(event){ // function to retrieve the test from the textarea in th
     txtNote: event.target.value
   })
 }
+
 /*displayTextEditor(){ // fumction to display the Text Editor Page
   this.setState({
     displayNotePage: false,
@@ -99,13 +102,18 @@ render(){
                 </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
-                <div id="notes" placeholder="type something"contentEditable="true">{/*onClick={this.displayTextEdito*/}
+                <div id="notes" placeholder="type something">{/*onClick={this.displayTextEdito*/}
                 </div>
                 <input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
+                <button type="submit" onClick={textNote}>text Note</button>
+                <script>
+                  autosize(document.querrySelectorAll('.LNote'));
+                </script>
                 <AddBar></AddBar>
                 <button type="submit" onClick={Added}>Do Something</button>
+                {/*<button type="submit" onClick={dummy}>Dummy</button>*/}
               </div>
       )
     } 
@@ -136,6 +144,24 @@ let db = new Localbase('Stored')
 export function showAll(){
 
 }
+export function textNote(){
+  var output= document.getElementById('notes');
+  var tArea=document.createElement('textarea');
+  tArea.className="LNote";
+  //tArea.contentEditable=true;
+  //tArea.textContent="";
+  tArea.id=counter;
+  autosize(tArea);
+  counter+=1;
+  output.appendChild(tArea);
+}
+/*export function dummy(){
+  var output=document.getElementById('notes');
+  var cont=document.getElementById('1').value;
+  var input=document.createElement('textarea')
+  input.textContent=cont;
+  output.appendChild(input);
+}*/
 
 export function Added() {
   db.collection('n1').add({
@@ -153,12 +179,14 @@ for(var i=1; i<counter; i++){
     })
     
   }
-  //db.collection('n1').add({
-  //id:i,
-  //Name: 'ASDASDASD',
-  //Content: document.getElementById('notes'),
-  //content : 'Hi there'
-//})
+  else if(ele.getAttribute("className")==="LNote"){
+    db.collection('n1').add({
+      id:i,
+      class:ele.className,
+      type:'textNote',
+      content:ele.value
+    })
+  }
 }
 console.log('files to db');
 console.log(counter);
