@@ -11,10 +11,15 @@ export class note_02 extends Component {
 constructor (props){
   super(props);
   this.state = {  
-    selectedFile: null,
+     newItem:"",
+     
+     selectedFile: null,
      displayNotePage: true,
      displayTextEditorPage: false,
+     
      txtNote: "",
+
+     list:[]
   }
 
   this.handleChange = this.handleChange.bind(this);
@@ -87,10 +92,87 @@ txtPost(){
     this.displayNote();
   }
 }
+
+/**Jogie */
+//so this function allows the list to be updated and changed by giving "keys" value which are placed on items//
+updateInput(key, value){
+  this.setState({
+    [key]: value
+  });
+
+}
+
+
+addItem(){
+  //adds items to checklist
+  const newItem={
+    //this makes a new unique id for every new item or whatever you want to create in a list, so you can add more than one thing to the checklist//
+    id:  1 + Math.random(),
+    value: this.state.newItem.slice()
+
+  };
+  //whenever you click the button it should form a new line
+  const list = [...this.state.list];
+
+  list.push(newItem);
+
+  this.setState({
+    list,
+    newItem:""
+  });
+
+}
+
+//just a function to delete stuff
+deleteItem(id){
+  const list = [this.state.list]
+  const updatedList = list.filter(item => item.id != id);
+
+  this.setState({list: updatedList});
+}
+ 
 render(){
     if (this.state.displayNotePage === true){//condirional render of Note Page
       return (
-              <div className="note">
+        //this will render the button thing to make the checklist
+            <div className="note">
+               Make Checklist
+                <br/>
+                <input
+                  type="type"
+                  placeholder= "Type Something in here"
+                  value={this.state.newItem}
+                  /*Jogie //im pretty sure this makes it so the list can add...like you cant type without this and the list wont update*/
+                  onChange = {i => this.updateInput("newItem", i.target.value)}
+                />
+                <button
+                  onClick={() => this.addItem()}
+                >
+                  Add to list
+                </button>
+                <br/>
+                <ul>
+                // because im using "map" i can map over every item, therefore every item has to have a unique key//
+                  {this.state.list.map(item => {
+                    return(
+                      <li key={item.id}>
+                        {item.value}
+                        <button
+                        //this button will call the function to delete stuff
+                          onClick = {() => this.deleteItem(item.id)}
+                        >
+                        X
+
+                        </button>
+                      </li>
+                    )
+                  })}
+                </ul> 
+
+
+
+
+
                 <Link className="backButton" to="/noteboards/noteboard_01">
                 <IoIcons.IoMdArrowRoundBack />
                 </Link>
@@ -102,7 +184,7 @@ render(){
                 <input type="submit" onClick={this.filePost}/>
                 {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
                 <AddBar></AddBar>
-                <button type="submit" onClick={Added}>Do Something</button>
+                <button type="submit" onClick={Added}>Do Something</button> 
               </div>
       )
     } 
@@ -139,6 +221,5 @@ db.collection('n1').add({
 })
 
   }
-
 
 export default note_02;
