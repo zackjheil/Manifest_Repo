@@ -70,10 +70,7 @@ Link{ /* CSS for all the 'Link' elements in the App */
   outline: 0px solid transparent;
 }
 
-.picture{/* CSS for Images displayed on the Note Page*/
-  max-width: 50vw;
-  max-height: 50vh;
-}
+
 .txtNote{ /*CSS for every text note made throught the Text Editor Page */
   max-width: 90%;
 }
