@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import '../App.css';
 import './note_01.css';
+import '../AddContent/AddBar.css';
+import {OverlayTrigger} from 'react-bootstrap';
+import Popover from '../Popover/Popover';
 import { Link } from 'react-router-dom';
-import AddBar from '../AddContent/AddBar';
+//import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase';
 import autosize from 'autosize';
@@ -104,16 +107,26 @@ render(){
                 <br/>
                 <div id="notes" placeholder="type something">{/*onClick={this.displayTextEdito*/}
                 </div>
-                <input type="file" onChange={this.handleChange}/>
+                {/*<input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
-                {/*<button  onClick={this.displayTextEditor}>Text Editor</button>*/}
-                <button type="submit" onClick={textNote}>text Note</button>
+                {/*<button  onClick={this.displayTextEditor}>Text Editor</button>
+                {/*<button type="submit" onClick={textNote}>text Note</button>*/}
                 <script>
                   autosize(document.querrySelectorAll('.LNote'));
                 </script>
-                <AddBar></AddBar>
                 <button type="submit" onClick={Added}>Do Something</button>
                 {/*<button type="submit" onClick={dummy}>Dummy</button>*/}
+                <nav className="addBar">
+                  <button type="submit" className="popOption" onClick={textNote}>Text</button>
+                  <OverlayTrigger trigger="click" placement="top" overlay={
+                  <input type="file" onChange={this.handleChange}/>
+                  }>
+                    <a className="popOption">Image</a>
+                  </OverlayTrigger>
+                  <input className="popOption" type="submit" onClick={this.filePost}/>
+                  <a href="/" className="popOption">Option</a>
+                  <a href="/" className="popOption">Option</a>
+                </nav>
               </div>
       )
     } 

@@ -11,7 +11,7 @@ export class note_02 extends Component {
 constructor (props){
   super(props);
   this.state = {  
-     selectedFile: null,
+    selectedFile: null,
      displayNotePage: true,
      displayTextEditorPage: false,
      txtNote: "",
