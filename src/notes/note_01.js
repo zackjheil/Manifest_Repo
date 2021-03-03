@@ -10,6 +10,8 @@ import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase';
 import autosize from 'autosize';
 var counter=1;
+var picturecounter=1;
+var pic= {};
 export class note_01 extends Component {
   
 /* Constructor object declared with a state of null */
@@ -32,14 +34,20 @@ constructor (props){
 
 /* function to get the URL of the selected image*/
 handleChange(event){
-  this.setState({
-    selectedFile: URL.createObjectURL(event.target.files[0])
-  })
+  const reader = new FileReader();
+ 
+        reader.addEventListener("load", ()  => {
+       localStorage.setItem ("recent-image" , reader.result);
+        });
+        reader.readAsDataURL(event.target.files[0]);
 }
 handleTxtChange(event){ // function to retrieve the test from the textarea in the Text Editor Page
-  this.setState({
-    txtNote: event.target.value
-  })
+  const reader = new FileReader();
+ 
+        reader.addEventListener("load", ()  => {
+       localStorage.setItem ("recent-image" , reader.result);
+        });
+        reader.readAsDataURL(this.files[0]);
 }
 
 /*displayTextEditor(){ // fumction to display the Text Editor Page
@@ -58,14 +66,25 @@ displayNote(){//function to display the Note Page
 }
 
 filePost(){
-  if(this.state.selectedFile !== null)// will only execute if user has selected a file
+  const source=localStorage.getItem("recent-image");
+  if(source)// will only execute if user has selected a file
+  
   {
+    db.collection('n1').add({
+      id:counter,
+      class: 'picture',
+      ncount:counter,
+      type: 'image',
+      iurl: source,
+      content:null
+    })
     var output= document.getElementById('notes');// gets the editable note area 
     var photo = document.createElement('img');// creates a new image element
     photo.className="picture"; //sets the className of the image as 'picture'
     photo.id=counter;
     counter+=1;
-    photo.setAttribute("src", this.state.selectedFile);//assigns the src of the new image element to the src identified in the handleChange function  
+    
+    photo.setAttribute("src", source);//assigns the src of the new image element to the src identified in the handleChange function  
     output.appendChild(photo);//appends the new image elemet to the div as a child element
     this.setState({ //sets the state of the 'selectedFile' element of the contructor to null to reset the selection
       selectedFile: null,
@@ -105,7 +124,7 @@ render(){
                 </Link>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
-                <div id="notes" placeholder="type something">{/*onClick={this.displayTextEdito*/}
+                <div id="notes" onClick={showAll} placeholder="type something">{/*onClick={this.displayTextEdito*/}
                 </div>
                 {/*<input type="file" onChange={this.handleChange}/>
                 <input type="submit" onClick={this.filePost}/>
@@ -114,7 +133,7 @@ render(){
                 <script>
                   autosize(document.querrySelectorAll('.LNote'));
                 </script>
-                <button type="submit" onClick={Added}>Do Something</button>
+                {/*<button type="submit" onClick={Added}>Do Something</button>*/}
                 {/*<button type="submit" onClick={dummy}>Dummy</button>*/}
                 <nav className="addBar">
                   <button type="submit" className="popOption" onClick={textNote}>Text</button>
@@ -155,15 +174,55 @@ let db = new Localbase('Stored')
 //});
 
 export function showAll(){
+  var output=document.getElementById('notes')
+  db.collection('n1').get().then(arr =>{
+    var n= arr.length;
+    for(var i=0; i<n; i++){
+      if(arr[i].type==="image"){
+        const source=arr[i].iurl
+        output= document.getElementById('notes');// gets the editable note area 
+        var photo = document.createElement('img');// creates a new image element
+        photo.className=arr[i].class; //sets the className of the image as 'picture'
+        photo.id=arr[i].id;
+        counter+=1;
+        photo.setAttribute("src", source);//assigns the src of the new image element to the src identified in the handleChange function  
+        output.appendChild(photo);//appends the new image elemet to the div as a child element
+      }
+      else if(arr[i].type==="textNote"){
+        var tArea=document.createElement('textarea');
+        tArea.className=arr[i].class;
+        tArea.id=arr[i].id;
+        tArea.value=arr[i].content;
+        autosize(tArea)
+        counter+=1
+        output.appendChild(tArea)
+      }
+
+    }
+  })
 
 }
 export function textNote(){
+  db.collection('n1').add({
+    id:counter,
+    class:'LNote',
+    ncount:counter,
+    type:'textNote',
+    iurl:null,
+    content: ""
+  })
   var output= document.getElementById('notes');
   var tArea=document.createElement('textarea');
+  var cid=counter
   tArea.className="LNote";
   //tArea.contentEditable=true;
   //tArea.textContent="";
   tArea.id=counter;
+  tArea.addEventListener('change', () => {
+    db.collection('n1').doc({id: cid}).update({
+      content:tArea.value
+    });
+  });
   autosize(tArea);
   counter+=1;
   output.appendChild(tArea);
@@ -176,32 +235,42 @@ export function textNote(){
   output.appendChild(input);
 }*/
 
-export function Added() {
+/*export function Added() {
+  picturecounter=1;
   db.collection('n1').add({
     id:0,
-    ncount:counter
+    class: null,
+    ncount:counter,
+    type: null,
+    iurl:null,
+    content:null
+  })
+  db.collection('n1').add({
+    id:1,
+    class: null,
+    ncount:counter,
+    type: null,
+    iurl:null,
+    content:null
   })
 for(var i=1; i<counter; i++){
   var ele = document.getElementById(i);
   if(ele.getAttribute("className")==="picture"){
     db.collection('n1').add({
-      id:i,
-      class:ele.className,
+      id:2,
+      class:'picture',
+      ncount: null,
       type:'image',
-      iurl:ele.getAttribute("src")
+      //iurl:ele.getAttribute("src"),
+      content: null
     })
     
   }
   else if(ele.getAttribute("className")==="LNote"){
-    db.collection('n1').add({
-      id:i,
-      class:ele.className,
-      type:'textNote',
-      content:ele.value
-    })
+    document.getElementById(i);
   }
 }
 console.log('files to db');
 console.log(counter);
-  }
+  }*/
 export default note_01;
