@@ -1,0 +1,30 @@
+.title-text-field{
+    color: black !important;
+    width: 60% !important;
+    text-align: left;
+    padding: 10px;
+}
+.backButton{
+    align-self: left;
+    font-size: 2rem;
+    min-width: 10vw;
+    min-height: 10vw;
+}
+.LNote{
+    background-color: lightblue;
+    resize: none;
+    outline: none;
+    min-width: 100%;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-width: 95%;
+    min-height: 10vh;
+}
+
+.picture{/* CSS for Images displayed on the Note Page*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 95%;
+    max-height: 500px;
+  }
