@@ -1,0 +1,98 @@
+.allBoards /* Universal CSS for all the board elements in the App */
+{
+    text-align: center;
+    background-color: white;
+}
+
+#Board1 {
+    background-color:#FAD9BB !important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+}
+#Board2 {
+    background-color:#F9FABB  !important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+#Board3 {
+    background-color:#CBFABB!important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+#Board4 {
+    background-color:#FABBBB  !important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.BoardTitles {
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+ }
+
+ .card-body {
+    padding: 0px !important;
+ }
+ 
+ /* Noteboard_01 Styling */
+ .allNotes /* Universal CSS for all the note elements in the App */
+ {
+     text-align: center;
+     background-color: white;
+ }
+ #Note1 {
+    background-color:#FAD9BB !important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+#Note2 {
+    background-color:#CBFABB !important;
+    margin: 2% !important;
+    width: 8em !important;
+    height: 10em !important;
+    color: black !important;
+    border: 1px solid !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.NoteTitles {
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+ }

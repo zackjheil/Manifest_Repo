@@ -1,0 +1,22 @@
+.addBar
+{
+   background-color: white;
+   position: fixed;
+   bottom:0;
+   height: 3rem;
+   width: 100%;
+   margin-bottom: 0;
+   overflow: hidden;
+}
+ 
+.addBarContainer
+{
+   background-color: white;
+   bottom: 0;
+   height: 2rem;
+   width: 90%;
+   margin-bottom: auto;
+   margin-top: 5px; 
+   margin-right: auto;
+   margin-left: auto;
+}
