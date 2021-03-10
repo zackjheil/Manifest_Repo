@@ -5,6 +5,7 @@ import '../AddContent/AddBar.css';
 import {OverlayTrigger} from 'react-bootstrap';
 import Popover from '../Popover/Popover';
 import { Link } from 'react-router-dom';
+import DropOptions from '../DropOptions/DropOptions';
 //import AddBar from '../AddContent/AddBar';
 import * as IoIcons from 'react-icons/io';
 import Localbase from 'localbase';
@@ -122,6 +123,7 @@ render(){
                 <Link className="backButton" to="/noteboards/noteboard_01">
                 <IoIcons.IoMdArrowRoundBack />
                 </Link>
+                <DropOptions></DropOptions>
                 <div id="notes_title" placeholder="Title" contentEditable="true"></div>
                 <br/>
                 <div id="notes" onClick={showAll} placeholder="type something">{/*onClick={this.displayTextEdito*/}
