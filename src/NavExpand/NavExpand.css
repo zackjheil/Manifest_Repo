@@ -1,6 +1,6 @@
 .navExpand
 {
-    background-color:aliceblue;
+    background-color: #3B72CD;
     min-height: 3rem;
     position: fixed;
     justify-content: start;
@@ -29,9 +29,14 @@
     max-width: 10vw;
     font-size: 2rem;
     justify-content: start;
+    color: #E2BBFA;
 }
+.menu-bars:focus{
+    color: #E2BBFA;
+}
+
 .sideNav{
-    background-color: aliceblue;
+    background-image: linear-gradient(#4867C0 0%,#7919AC 72.92%);
     align-self: left;
     text-align: left !important;
     display: flex;
@@ -45,6 +50,7 @@
     left:-100%;
     transition: 850ms;
     z-index: 2;
+    opacity: ;
 }
 .sideNav.active{
     left:0;
@@ -56,6 +62,7 @@
 }
 .navLinks a{
     text-decoration: none;
+    color: white;
 }
 .navToggle{
     min-height: 3rem;

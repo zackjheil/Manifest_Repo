@@ -1,11 +1,11 @@
 .allBoards /* Universal CSS for all the board elements in the App */
 {
     text-align: center;
-    background-color: white;
+    background: linear-gradient(to bottom, #51249b 0%, #0055c7 100%);
 }
 
 #Board1 {
-    background-color:#FAD9BB !important;
+    background-color:#E0D487 !important;    
     margin: 2% !important;
     width: 8em !important;
     height: 10em !important;
@@ -17,7 +17,7 @@
     
 }
 #Board2 {
-    background-color:#F9FABB  !important;
+    background-color:#E79ED3  !important;    
     margin: 2% !important;
     width: 8em !important;
     height: 10em !important;
@@ -28,7 +28,7 @@
     margin-right: auto !important;
 }
 #Board3 {
-    background-color:#CBFABB!important;
+    background-color:#ABDA8A!important;    
     margin: 2% !important;
     width: 8em !important;
     height: 10em !important;
@@ -39,7 +39,7 @@
     margin-right: auto !important;
 }
 #Board4 {
-    background-color:#FABBBB  !important;
+    background-color:#9AD1E8  !important;
     margin: 2% !important;
     width: 8em !important;
     height: 10em !important;

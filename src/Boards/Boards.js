@@ -4,6 +4,7 @@ import '../Boards/Boards.css';
 import {Card} from 'react-bootstrap';
 //import note from './note.jpg';
 
+
 const card = (props) => 
 {
     return(
