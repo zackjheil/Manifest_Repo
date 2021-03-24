@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Card, CardGroup } from 'react-bootstrap';
 import BottomNav from '../BottomNav/BottomNav';
 import * as IoIcons from 'react-icons/io';
+import Happy from './Happy.gif';
+import HappyStill from './Happy.svg';
 
 function noteboard_01() {
   return (
@@ -13,11 +15,14 @@ function noteboard_01() {
             <IoIcons.IoMdArrowRoundBack />
         </Link>
         <h3>Notes</h3>
+        
         <CardGroup className="allNotes"> {/** className to change all notes */}
           <Link to="/notes/note_01">
             <Card id="Note1"> {/* to change individal notes */}
               <Card.Body>
                 <Card.Title className="NoteTitles">Note 1</Card.Title>
+                <img className="emoticonGifs" src={Happy}/>
+                
               </Card.Body>
             </Card>
           </Link>

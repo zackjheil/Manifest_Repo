@@ -30,6 +30,12 @@
   
 }
 
+.emoticonGifs
+{
+  width: 5em;
+  height: 3em;
+}
+
 .boards /* Universal CSS for all the card card elements in the App */
 {
     background-color: grey;
