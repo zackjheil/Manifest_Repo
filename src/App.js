@@ -1,26 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Layout from './containers/Layout/Layout';
+import NavExpand from './containers/NavExpand/NavExpand';
+import {Switch, Route} from 'react-router-dom';
+import Boards from './components/Boards/Boards';
+import NewNote from './components/NewNote/NewNote';
+import MainPage from './components/Main/Main';
+import 'react-bootstrap';
+import 'bootswatch/dist/lux/bootstrap.min.css'; // quick style provided here
 import './App.css';
-import note_01 from './notes/note_01';
-import note_02 from './notes/note_02';
-import Noteboard from './noteboards/noteboard_01';
-import Main_page from './Main';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
-import NavExpand from './NavExpand/NavExpand';
 
 function App() {
-  return (    
+
+  const [notes,setNotes] = useState([])
+
+  return (
     <div className="App">
-      <Router>
-          <NavExpand/>
-          <Switch>
-            <Route path="/" exact component={Main_page} />
-            <Route path="/noteboards/noteboard_01" component={Noteboard} />
-            <Route path="/notes/note_01" component={note_01} />
-            <Route path="/notes/note_02" component={note_02} />
-          </Switch>
-      </Router>
+      <Layout>
+        <NavExpand />
+      </Layout>
+      <Switch>
+        <Route exact path="/">
+          <MainPage/>
+        </Route>
+        <Route path="/newnote">
+          <NewNote setNotes={setNotes}/>
+        </Route>
+        <Route path="/boards">
+          <Boards notes={notes} setNotes={setNotes}/>
+        </Route>
+      </Switch>
     </div>
-   
   );
 }
 
