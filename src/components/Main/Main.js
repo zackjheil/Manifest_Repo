@@ -1,12 +1,19 @@
 import React from 'react';
 import {Card,ListGroup, Nav, Container} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
+import Tooltip from '../Tooltips/Tooltips';
 
 const mainpage = () => {
         return(
           <div>
             <Container>
-            <h1>Notes</h1>
+            <div>
+              <Tooltip content="These are your notes!">
+                <h1>
+                  Notes
+                </h1>
+              </Tooltip>
+            </div>
             <Card>
               <ListGroup variant="flush">
                 <ListGroup.Item>
