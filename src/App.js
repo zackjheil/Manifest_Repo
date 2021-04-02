@@ -11,7 +11,13 @@ import './App.css';
 
 function App() {
 
-  const [notes,setNotes] = useState([])
+  const [notebook,setNotebook] = useState([])
+  const [note,setNote]=useState([])
+  const [note2,setNote2]=useState([])
+  const [noteele,setNoteele]=useState([])
+  const [ide,setIde]=useState()
+  const [boardtitle,setBoardTitle]=useState()
+  const [noteId,setNoteId]=useState()
 
   return (
     <div className="App">
@@ -20,13 +26,13 @@ function App() {
       </Layout>
       <Switch>
         <Route exact path="/">
-          <MainPage/>
+          <MainPage notebook={notebook} setNotebook={setNotebook} setBoardTitle={setBoardTitle} setNotes={setNote} setIde={setIde}/>
         </Route>
-        <Route path="/newnote">
-          <NewNote setNotes={setNotes}/>
+        <Route exact path="/:boardID">
+          <Boards notes={note} ide={ide} setNotes={setNote} boardtitle={boardtitle} setNoteId={setNoteId} setIde={setIde} setNoteele={setNoteele}/>
         </Route>
-        <Route path="/boards">
-          <Boards notes={notes} setNotes={setNotes}/>
+        <Route exact path="/:boardID/:noteID">
+          <NewNote noteele={noteele} ide={ide} setNotes={setNote} setNote2={setNote2} note2={note2} noteId={noteId} notes={note} setNoteele={setNoteele} setIde={setIde}/>
         </Route>
       </Switch>
     </div>
