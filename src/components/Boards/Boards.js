@@ -14,6 +14,7 @@ const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle
 
     let db = new Localbase('Mani');
     console.log(boardtitle)
+    
 /*----------Professor Mauro's code if we need to fall back to it----------------
     function deleteBoard(id, db) {
         setNotes(notes.filter(n => n.id !== id))

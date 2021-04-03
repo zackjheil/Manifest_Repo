@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom';
 import Boards from './components/Boards/Boards';
 import NewNote from './components/NewNote/NewNote';
 import MainPage from './components/Main/Main';
+import About from './components/About/About';
 import 'react-bootstrap';
 import 'bootswatch/dist/lux/bootstrap.min.css'; // quick style provided here
 import './App.css';
@@ -28,6 +29,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <MainPage notebook={notebook} setNotebook={setNotebook} setBoardTitle={setBoardTitle} setNotes={setNote} setIde={setIde} />
+        </Route>
+        <Route exact path="/about">
+          <About/>
         </Route>
         <Route exact path="/:boardID">
           <Boards notes={note} ide={ide} setNotes={setNote} boardtitle={boardtitle} setNoteId={setNoteId} setIde={setIde} setNoteele={setNoteele} setNoteTitle={setNoteTitle}/>
