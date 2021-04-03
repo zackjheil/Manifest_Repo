@@ -4,9 +4,16 @@ import {LinkContainer} from 'react-router-bootstrap';
 import './Boards.css';
 import Localbase from 'localbase';
 
-const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele}) => {
+const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle}) => {
+  window.onbeforeunload = function() { 
+    window.setTimeout(function () { 
+        window.location = '/';
+    }, 0); 
+    window.onbeforeunload = null; 
+  }
 
     let db = new Localbase('Mani');
+    console.log(boardtitle)
 /*----------Professor Mauro's code if we need to fall back to it----------------
     function deleteBoard(id, db) {
         setNotes(notes.filter(n => n.id !== id))
@@ -56,6 +63,22 @@ function getNotes(){
         }
       })
       }
+      
+function changeBoardTitle(event){
+  var newTitle=event.target.value
+        db.collection('boards').doc({id:ide}).update({
+            title:newTitle
+        })
+       /* var newTitle=event.target.value
+        notes.filter(note =>{
+          if(note.id===noteId){
+            note.title=newTitle
+          }
+        })
+        db.collection('boards').doc({id:ide}).update({
+          notes:notes
+        })*/
+      }
 
 
 
@@ -69,6 +92,7 @@ function getNotes(){
     return (
         <div>
             <Container>
+            <textarea rows="1" className="Header" onChange={changeBoardTitle}>{boardtitle}</textarea>
             {/*----------Professor Mauro's code if we need to fall back to it----------------
             notes.map((note) => (
             <Card border="warning" className="cardBoard">
@@ -87,7 +111,8 @@ function getNotes(){
                   <Card id={a.id} className="cardBoard">
                   <LinkContainer to={linker}>
                       <Card.Body onClick={() => {setNoteele(a.noteele)
-                      setNoteId(a.id)}}>
+                      setNoteId(a.id)
+                      setNoteTitle(a.title)}}>
                           <Card.Title>{a.title}</Card.Title>
                       </Card.Body>
                   </LinkContainer>

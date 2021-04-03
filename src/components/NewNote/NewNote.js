@@ -8,8 +8,15 @@ import './NewNote.css'
 
 let db = new Localbase('Mani');
 // Object { title: "", text: "", id: "" }
+window.onbeforeunload = function() { 
+  window.setTimeout(function () { 
+      window.location = '/';
+  }, 0); 
+  window.onbeforeunload = null; 
+}
 
-const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde}) => {
+const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde,notetitle}) => {
+  console.log(notetitle)
     /*----------Professor Mauro's code if we need to fall back to it----------------
     const [form, setForm] = useState({title: '', text: ''})
     const [id, setId] = useState(uniqid())
@@ -31,8 +38,7 @@ const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,se
 
     //console.log(setNotes)
 --------------------------------------------------------------------------------*/
-
-
+console.log(ide)
 
 function addNoteEleToDB(){
     var n=noteele.length+1
@@ -61,14 +67,17 @@ function addNoteEleToDB(){
 
   function deleteNoteEleFromDB(givenId){
     db.collection('boards').doc({id:ide}).get().then(doc =>{
-      setNote2(doc.notes)
+      setNotes(doc.notes)
     })
-        var n=noteele.findIndex(a => a.id===givenId)
-        noteele.splice(n,1)
-        var s1=note2.findIndex(a => a.id===noteId)
-        note2[s1].noteele=noteele
+    var n=noteele.findIndex(a => a.id===givenId)
+    noteele.splice(n,1)
+    notes.filter(note =>{
+      if(note.id===noteId){
+        note.noteele.splice(n,1)
+    }
+  })
     db.collection('boards').doc({id:ide}).update({
-      notes:note2
+      notes:notes
     })
   }
 
@@ -121,7 +130,6 @@ function addNoteEleToDB(){
       var n=noteele.length+1
       noteele.push({
       id:n,
-      class:'LNote',//
       type:'textNote',
       iurl:null,
       content: ""
@@ -130,7 +138,6 @@ function addNoteEleToDB(){
         if(note.id===noteId){
           note.noteele.push({
             id:n,
-            class:'LNote',//
             type:'textNote',
             iurl:null,
             content: ""
@@ -141,23 +148,45 @@ function addNoteEleToDB(){
         notes:notes
       })
   }
-  function textNoteHandleChange(event){
-      console.log(event.target.value)
-      console.log(event.target.id)
-      var cont=event.target.value
-      var givenId=event.target.id
+  function changeTitle(event){
     db.collection('boards').doc({id:ide}).get().then(doc =>{
+
+      setNotes(doc.notes)
+    })
+    var newTitle=event.target.value
+    notes.filter(note =>{
+      if(note.id===noteId){
+        note.title=newTitle
+      }
+    })
+    db.collection('boards').doc({id:ide}).update({
+      notes:notes
+    })
+  }
+
+
+
+  function textNoteHandleChange(givenId){
+      var tArea=document.getElementById(givenId)
+      var cont=tArea.value
+      console.log(tArea)
+    db.collection('boards').doc({id:ide}).get().then(doc =>{
+
         setNotes(doc.notes)
       })
       console.log(noteele)
       console.log(givenId)
-      const n=noteele.findIndex(b=> b.id===givenId)
+      var n=noteele.findIndex(a => a.id===givenId)
       console.log(n)
-      var s1=notes.findIndex(a => a.id===noteId)
-      console.log(s1)
-      notes[s1].noteele[n].content=cont
-      console.log(s1)
-      console.log(notes[s1])
+      notes.filter(note =>{
+        if(note.id===noteId){
+          console.log(note)
+          console.log(note)
+          console.log(n)
+          note.noteele[n].content=cont
+        }
+      })
+
       db.collection('boards').doc({id:ide}).update({
         notes:notes
       })
@@ -186,6 +215,7 @@ useEffect(() => {
     return (
 
         <Container>
+          <textarea rows="1" className="Header" onChange={changeTitle}>{notetitle}</textarea>
         {/*----------Professor Mauro's code if we need to fall back to it----------------
         <Form onSubmit={saveNote}>
             <Form.Group>
@@ -218,9 +248,12 @@ useEffect(() => {
                 }
                 else if(a.type==="textNote"){
                 return(
-                    <textarea id={a.id} className="LNote" content={a.content} onChange={textNoteHandleChange}/>
-                
-                )
+                  <div>
+                    <textarea id={a.id} className="LNote" onChange={()=>{textNoteHandleChange(a.id)}}>{a.content}</textarea>
+                    <button onClick={()=>{deleteNoteEleFromDB(a.id)}}>Delete Text Note{a.id}</button>
+                    
+                  </div>
+                  )
                 }})}
                 <input type="file" onChange={handleChange}/>
                 <input className="popOption" type="submit" onClick={filePost}/>

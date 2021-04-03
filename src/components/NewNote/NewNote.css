@@ -1,3 +1,11 @@
 .LNote{
     width:100%
 }
+.Header{
+    width:100%;
+    resize:none;
+    text-align: center;
+    font-size: 48px;
+    background-color: aliceblue;
+    border: none;
+}
