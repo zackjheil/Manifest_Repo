@@ -6,6 +6,7 @@ import Boards from './components/Boards/Boards';
 import NewNote from './components/NewNote/NewNote';
 import MainPage from './components/Main/Main';
 import About from './components/About/About';
+import Settings from './components/Settings/settings';
 import 'react-bootstrap';
 import 'bootswatch/dist/lux/bootstrap.min.css'; // quick style provided here
 import './App.css';
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/about">
           <About/>
+        </Route>
+        <Route exact path="/settings">
+          <Settings/>
         </Route>
         <Route exact path="/:boardID">
           <Boards notes={note} ide={ide} setNotes={setNote} boardtitle={boardtitle} setNoteId={setNoteId} setIde={setIde} setNoteele={setNoteele} setNoteTitle={setNoteTitle}/>

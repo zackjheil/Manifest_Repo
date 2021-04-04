@@ -66,7 +66,7 @@ class NavExpand extends Component {
                     <Link to="/">Feelings</Link>
                 </li>
                 <li className="navLinks">
-                    <Link to="/">Settings</Link>
+                    <Link to="/settings">Settings</Link>
                 </li>
             </ul>
             </nav>

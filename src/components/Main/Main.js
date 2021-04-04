@@ -44,6 +44,7 @@ useEffect(() => {
                 </h1>
               </Tooltip>
             </div>
+            {/*------------------------------}
             <Card>
               <ListGroup variant="flush">
                 <ListGroup.Item>
@@ -58,6 +59,7 @@ useEffect(() => {
                     </ListGroup.Item>
               </ListGroup>
             </Card>
+  */}
             {notebook.map((a)=>{
                 return(
                   <Card id={a.id} className="Cards">

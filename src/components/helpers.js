@@ -5,12 +5,14 @@ import App from '../App.js';
 let db = new Localbase('Mani')
 //deletes all boards
 export function deleteCollection(){
+    var ui=window.confirm("You are about to delete the all boards and notes. Click 'OK' to continue")
+    if(ui===true){
     db.collection('boards').delete()
+    }
 }
 //delets the entire database
 export function deletedatabase(){
     db.delete()
-
 }
 //adds a board to the database
 export function addBoardToDB(){
