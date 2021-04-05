@@ -10,7 +10,7 @@
 {
     display: inline-block;
     position: relative;
-    z-index: 0%;
+    z-index: 1;
 }
 
 .Tooltip-Tip /*this is being overridden because nothing changes when making changes to this, cannot figure out what though*/
