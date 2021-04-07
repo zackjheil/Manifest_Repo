@@ -12,12 +12,13 @@ let db = new Localbase('Mani');
 
 const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde,notetitle}) => {
   console.log(notetitle)
+  
   window.onbeforeunload = function() { 
-    window.setTimeout(function () { 
-        window.location = '/';
-    }, 0); 
-    window.onbeforeunload = null; 
-  }
+  window.setTimeout(function () { 
+      window.location = '/';
+  }, 0); 
+  window.onbeforeunload = null; 
+}
     /*----------Professor Mauro's code if we need to fall back to it----------------
     const [form, setForm] = useState({title: '', text: ''})
     const [id, setId] = useState(uniqid())
