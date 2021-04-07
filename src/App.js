@@ -3,7 +3,7 @@ import Layout from './containers/Layout/Layout';
 import NavExpand from './containers/NavExpand/NavExpand';
 import {Switch, Route} from 'react-router-dom';
 import Boards from './components/Boards/Boards';
-import NewNote from './components/NewNote/NewNote';
+import NewNote from './components/NewNote/NewNote'
 import MainPage from './components/Main/Main';
 import About from './components/About/About';
 import Settings from './components/Settings/settings';

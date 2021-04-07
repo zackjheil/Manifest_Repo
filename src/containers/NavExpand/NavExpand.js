@@ -51,20 +51,14 @@ class NavExpand extends Component {
                     </Link>
                 </li>
                 <li className="navLinks">
-                    <Link to="/">Main</Link>
+                    <Link to="/">Boards</Link>
                 </li>
                 <li className="navLinks">
                     <Link to="/About">About</Link>
                 </li>
-                <li className="navLinks">
-                    <Link to="/newnote">New</Link>
-                </li>
-                <li className="navLinks">
-                    <Link to="/boards">Boards</Link>
-                </li>
-                <li className="navLinks">
-                    <Link to="/">Feelings</Link>
-                </li>
+                
+               
+           
                 <li className="navLinks">
                     <Link to="/settings">Settings</Link>
                 </li>
