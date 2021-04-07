@@ -117,7 +117,7 @@ function changeBoardTitle(event){
                           <Card.Title>{a.title}</Card.Title>
                       </Card.Body>
                   </LinkContainer>
-                  <button onClick={() =>{deleteNoteFromDB(ide,notes,a.id)}}>Delete Button</button>
+                  <button className="deleteButton" onClick={() =>{deleteNoteFromDB(ide,notes,a.id)}}>Delete</button>
                   </Card>
                 )
                 

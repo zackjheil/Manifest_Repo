@@ -4,6 +4,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import Tooltip from '../Tooltips/Tooltips';
 import Localbase from 'localbase';
 import * as ManiF from '../helpers.js';
+import './Main.css'
 let db = new Localbase('Mani')
 
 const mainpage = ({notebook,setNotebook,setBoardTitle,setNotes,setIde}) => {
@@ -35,12 +36,12 @@ useEffect(() => {
         
   
   return(
-          <div>
+          <div >
             <Container>
-            <div>
-              <Tooltip content="These are your notes!">
-                <h1>
-                  Notes
+            <div >
+              <Tooltip content="These are your boards!">
+                <h1 className="titleText">
+                  Boards
                 </h1>
               </Tooltip>
             </div>
@@ -62,7 +63,7 @@ useEffect(() => {
   */}
             {notebook.map((a)=>{
                 return(
-                  <Card id={a.id} className="Cards">
+                  <Card id={a.id}  className="Cards">
                   <LinkContainer to={`${a.title}`}>
                       <Card.Body onClick={() => {setNotes(a.notes)
                       setIde(a.id)
@@ -70,12 +71,12 @@ useEffect(() => {
                           <Card.Title>{a.title}</Card.Title>
                       </Card.Body>
                   </LinkContainer>
-                  <button onClick={() =>{ManiF.deleteBoardFromDB(a.id)}}>Delete Button</button>
+                  <button className="deleteButton" onClick={() =>{ManiF.deleteBoardFromDB(a.id)}}>Delete</button>
                   </Card>
                 )
                 
                 })}
-              <Button onClick={addBoardToDB} variant="info" type="submit">Add Board</Button>
+              <Button className="addButton" onClick={addBoardToDB} variant="info" type="submit">Add Board</Button>
             </Container>
           </div>
         );

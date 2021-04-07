@@ -1,0 +1,36 @@
+.titleText{
+    color: white;
+    
+}
+.testBox{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-color: white;
+    
+}
+.Cards{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: white;
+    
+    
+    
+}
+.deleteButton{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border-radius: 8px;
+    
+}
+
+
+.Cards.card{
+    
+    color: black;
+    background-color: #E0D487;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addButton{
+    border-radius: 8px;
+}
