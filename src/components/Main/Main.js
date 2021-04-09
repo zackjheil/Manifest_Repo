@@ -5,6 +5,7 @@ import Tooltip from '../Tooltips/Tooltips';
 import Localbase from 'localbase';
 import * as ManiF from '../helpers.js';
 import './Main.css'
+import PlusButton from "../../assets/Buttons/AddButton.svg"
 let db = new Localbase('Mani')
 
 const mainpage = ({notebook,setNotebook,setBoardTitle,setNotes,setIde}) => {
@@ -76,7 +77,10 @@ useEffect(() => {
                 )
                 
                 })}
-              <Button className="addButton" onClick={addBoardToDB} variant="info" type="submit">Add Board</Button>
+                
+              
+              <button className="addButton"><img src={PlusButton} alt="Logo" onClick={addBoardToDB} /></button>
+              
             </Container>
           </div>
         );

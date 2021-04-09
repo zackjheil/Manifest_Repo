@@ -32,5 +32,13 @@
 }
 
 .addButton{
-    border-radius: 8px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    size: 20px;
+    color: transparent;
+    border: transparent;
+    display:table;
+    margin: 0 auto;
+    
 }

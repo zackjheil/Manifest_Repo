@@ -4,6 +4,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import './Boards.css';
 import Localbase from 'localbase';
 
+
 const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle}) => {
   window.onbeforeunload = function() { 
     window.setTimeout(function () { 
@@ -123,6 +124,7 @@ function changeBoardTitle(event){
                 
                 })}
                  <Button onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit">Add Note</Button>
+                 {/*<button className="addNote"><img src={PlusButton} alt="Add" onClick={addNoteToDB} /></button>*/}
             </Container>
         </div>
     )

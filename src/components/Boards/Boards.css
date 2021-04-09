@@ -19,7 +19,7 @@
 }
 
 .cardBoard.card{
-    background-color: #ABDA8A;;
+    background-color: #ABDA8A;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     color: white;
 }
@@ -28,4 +28,15 @@
     background-color: rgba(255, 255, 255, 0.5);
     color: white;
     border-radius: 8px;
+}
+
+.addNote{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    size: 20px;
+    color: transparent;
+    border: transparent;
+    display:table;
+    margin: 0 auto;
 }
