@@ -125,7 +125,7 @@ function changeBoardTitle(event){
                 
                 })}
                  
-                 <button className="addNote"><img src={PlusButton} alt="Add" onClick={addNoteToDB} /></button>
+                 <button className="addNote" onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit"><img src={PlusButton} alt="Add"/></button>
             </Container>
         </div>
     )
