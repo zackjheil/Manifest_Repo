@@ -3,6 +3,7 @@ import {Card,Container, Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import './Boards.css';
 import Localbase from 'localbase';
+import PlusButton from "../../assets/Buttons/AddButton.svg"
 
 
 const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle}) => {
@@ -123,8 +124,8 @@ function changeBoardTitle(event){
                 )
                 
                 })}
-                 <Button onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit">Add Note</Button>
-                 {/*<button className="addNote"><img src={PlusButton} alt="Add" onClick={addNoteToDB} /></button>*/}
+                 
+                 <button className="addNote"><img src={PlusButton} alt="Add" onClick={addNoteToDB} /></button>
             </Container>
         </div>
     )
