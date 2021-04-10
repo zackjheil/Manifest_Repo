@@ -17,3 +17,27 @@
     border-color: white;
     color: white;
 }
+
+.deleteButton{
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    color: transparent;
+    border: transparent;
+    margin-left: auto;
+    display: table;
+    
+    
+}
+
+.addNote{
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    color: transparent;
+    border: transparent;
+    margin-right: auto;
+    margin-left: 0%;
+}

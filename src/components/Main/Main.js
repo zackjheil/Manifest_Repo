@@ -6,6 +6,7 @@ import Localbase from 'localbase';
 import * as ManiF from '../helpers.js';
 import './Main.css'
 import PlusButton from "../../assets/Buttons/AddButton.svg"
+import DeleteButton from "../../assets/Buttons/DeleteButton.svg"
 let db = new Localbase('Mani')
 
 const mainpage = ({notebook,setNotebook,setBoardTitle,setNotes,setIde}) => {
@@ -72,14 +73,14 @@ useEffect(() => {
                           <Card.Title>{a.title}</Card.Title>
                       </Card.Body>
                   </LinkContainer>
-                  <button className="deleteButton" onClick={() =>{ManiF.deleteBoardFromDB(a.id)}}>Delete</button>
+                  <button className="deleteButton" onClick={() =>{ManiF.deleteBoardFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                   </Card>
                 )
                 
                 })}
                 
               
-              <button className="addButton"><img src={PlusButton} alt="Logo" onClick={addBoardToDB} /></button>
+              <button className="addButton"><img src={PlusButton} alt="Add" onClick={addBoardToDB} /></button>
               
             </Container>
           </div>

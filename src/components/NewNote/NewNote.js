@@ -6,6 +6,8 @@ import Localbase from 'localbase';
 import {Card} from 'react-bootstrap';
 import * as ManiF from '../helpers.js';
 import './NewNote.css'
+import DeleteButton from '../../assets/Buttons/DeleteButton.svg'
+import AddNote from '../../assets/Note_Icon.svg'
 
 let db = new Localbase('Mani');
 // Object { title: "", text: "", id: "" }
@@ -253,14 +255,14 @@ useEffect(() => {
                 return(
                   <div>
                     <textarea id={a.id} className="LNote" onChange={()=>{textNoteHandleChange(a.id)}}>{a.content}</textarea>
-                    <button onClick={()=>{deleteNoteEleFromDB(a.id)}}>Delete Text Note{a.id}</button>
+                    <button className="deleteButton" onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                     
                   </div>
                   )
                 }})}
                 <input type="file" onChange={handleChange}/>
                 <input className="popOption" type="submit" onClick={filePost}/>
-                <button onClick={textNote}>Add Text Note</button>
+                <button className="addNote" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
         </Container>
     )
 }
