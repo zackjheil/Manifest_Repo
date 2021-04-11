@@ -261,9 +261,15 @@ useEffect(() => {
                   )
                 }})}
                 {/*<input type="file" onChange={handleChange}/> */}
-                <input type="file"  onChange={handleChange}/>
+                <div className="file-input">
+                  <input type="file" id="file" className="file" onChange={handleChange}/>
+                  <label for="file">Select file</label>
+                </div>
                 
-                <input className="popOption" type="submit" onClick={filePost}/>
+                <div className="file-input">
+                  <input className="file" type="submit" onClick={filePost}/>
+                  <label for="submit">Submit</label>
+                </div>
                 <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
         </Container>
     )
