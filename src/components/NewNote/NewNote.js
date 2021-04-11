@@ -6,6 +6,8 @@ import Localbase from 'localbase';
 import {Card} from 'react-bootstrap';
 import * as ManiF from '../helpers.js';
 import './NewNote.css'
+import DeleteButton from '../../assets/Buttons/DeleteButton.svg'
+import AddNote from '../../assets/Note_Icon.svg'
 
 let db = new Localbase('Mani');
 // Object { title: "", text: "", id: "" }
@@ -245,7 +247,7 @@ useEffect(() => {
                 return(
                   <Card id={a.id} className="picture">
                       <Card.Img src={a.iurl} />
-                  <button onClick={()=>{deleteNoteEleFromDB(a.id)}}>Delete Button</button>
+                  <button className="deleteButton" onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                   </Card>
                 )
                 }
@@ -253,14 +255,22 @@ useEffect(() => {
                 return(
                   <div>
                     <textarea id={a.id} className="LNote" onChange={()=>{textNoteHandleChange(a.id)}}>{a.content}</textarea>
-                    <button onClick={()=>{deleteNoteEleFromDB(a.id)}}>Delete Text Note{a.id}</button>
+                    <button className="deleteButton" onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                     
                   </div>
                   )
                 }})}
-                <input type="file" onChange={handleChange}/>
-                <input className="popOption" type="submit" onClick={filePost}/>
-                <button onClick={textNote}>Add Text Note</button>
+                {/*<input type="file" onChange={handleChange}/> */}
+                <div className="file-input">
+                  <input type="file" id="file" className="file" onChange={handleChange}/>
+                  <label for="file">Select file</label>
+                </div>
+                
+                <div className="file-input">
+                  <input className="file" type="submit" onClick={filePost}/>
+                  <label for="submit">Submit</label>
+                </div>
+                <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
         </Container>
     )
 }

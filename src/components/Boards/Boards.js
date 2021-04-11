@@ -4,6 +4,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import './Boards.css';
 import Localbase from 'localbase';
 import PlusButton from "../../assets/Buttons/AddButton.svg"
+import DeleteButton from '../../assets/Buttons/DeleteButton.svg'
 
 
 const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle}) => {
@@ -119,13 +120,13 @@ function changeBoardTitle(event){
                           <Card.Title>{a.title}</Card.Title>
                       </Card.Body>
                   </LinkContainer>
-                  <button className="deleteButton" onClick={() =>{deleteNoteFromDB(ide,notes,a.id)}}>Delete</button>
+                  <button className="deleteButton" onClick={() =>{deleteNoteFromDB(ide,notes,a.id)}}><img src={DeleteButton} alt="Delete"/></button>
                   </Card>
                 )
                 
                 })}
                  
-                 <button className="addNote"><img src={PlusButton} alt="Add" onClick={addNoteToDB} /></button>
+                 <button className="addNote" onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit"><img src={PlusButton} alt="Add"/></button>
             </Container>
         </div>
     )
