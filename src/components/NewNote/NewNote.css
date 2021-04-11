@@ -5,6 +5,7 @@
     border-radius: 8px;
     border-color: white;
     color: white;
+    padding-bottom: 15px;
 
 }
 .Header{
@@ -31,7 +32,8 @@
     
 }
 
-.addNote{
+
+.addTextBox{
 
     background-color: transparent;
     background-repeat: no-repeat;
@@ -40,4 +42,12 @@
     border: transparent;
     margin-right: auto;
     margin-left: 0%;
+}
+
+.picture.card{
+
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    padding-bottom: 20px;
 }

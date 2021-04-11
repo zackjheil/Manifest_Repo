@@ -247,7 +247,7 @@ useEffect(() => {
                 return(
                   <Card id={a.id} className="picture">
                       <Card.Img src={a.iurl} />
-                  <button onClick={()=>{deleteNoteEleFromDB(a.id)}}>Delete Button</button>
+                  <button className="deleteButton" onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                   </Card>
                 )
                 }
@@ -260,9 +260,11 @@ useEffect(() => {
                   </div>
                   )
                 }})}
-                <input type="file" onChange={handleChange}/>
+                {/*<input type="file" onChange={handleChange}/> */}
+                <input type="file"  onChange={handleChange}/>
+                
                 <input className="popOption" type="submit" onClick={filePost}/>
-                <button className="addNote" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
+                <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
         </Container>
     )
 }
