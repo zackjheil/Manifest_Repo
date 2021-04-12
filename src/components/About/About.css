@@ -1,19 +1,31 @@
 #aboutTitle
 {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 10px;
+    margin-bottom: 0px;
 }
-
-#aboutContent
+#nameHeader
 {
-    padding-right: 20px;
-    padding-left: 20px;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 0px;
+}#aboutSubitle
+{
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-right: 20px;
 }
 #contentBox
 {
-    margin-right: 15px;
+    color: black;
     margin-left: 15px;
-    background-color: rgba(255, 255, 255, 0.192);
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 0px;
+}
+#aboutContent
+{
+    font-size: 115%;
+    padding: 20px;
+    margin-bottom: 0px;
 }
 #name
 {
@@ -22,3 +34,4 @@
 #text-position{
     margin-right: 10px;
 }
+

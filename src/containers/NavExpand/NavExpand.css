@@ -5,7 +5,7 @@
     position: fixed;
     justify-content: start;
     align-items: center;
-    margin-bottom: 25px; /*Josh did this :)*/
+    margin-bottom: 10px; /*Josh did this :)*/
 }
 .navTitle
 {
@@ -19,7 +19,6 @@
     padding: 0;**/
 
 }
-
 
 .navLinks
 {
