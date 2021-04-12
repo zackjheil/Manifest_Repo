@@ -22,8 +22,8 @@ class About extends Component
                 <Accordion defaultActiveKey="0">
                     <Accordion.Toggle as={Button} variant="link" eventKey="1" id="aboutTitle">Leads</Accordion.Toggle>
                     <div id="contentBox"><Accordion.Collapse eventKey="1">
-                        <div>
-                            <p id="aboutContent">
+                        <div id="aboutContent">
+                            
                                 <li>
                                     Joshua Ducharme-Baribeau
                                 </li>
@@ -57,14 +57,14 @@ class About extends Component
                                 <li>
                                     <a href="https://hashimk99.wixsite.com/portfolio">Portfolio</a>
                                 </li></ul>
-                            </p>
+                            
                         </div>
                     </Accordion.Collapse></div>
                 </Accordion>
                 <Accordion defaultActiveKey="0">
                     <Accordion.Toggle as={Button} variant="link" eventKey="1" id="aboutTitle">Designers</Accordion.Toggle>
                     <div id="contentBox"><Accordion.Collapse eventKey="1">
-                        <p id="aboutContent">
+                        <div id="aboutContent">
                             <li>
                                 Ethan Bowbyes
                             </li>
@@ -110,13 +110,13 @@ class About extends Component
                             <li>
                                 Email: jago20002010@gmail.com
                             </li></ul>
-                        </p>
+                        </div>
                     </Accordion.Collapse></div>
                 </Accordion>
                 <Accordion defaultActiveKey="0">
                     <Accordion.Toggle as={Button} variant="link" eventKey="1" id="aboutTitle">Developers</Accordion.Toggle>
                     <div id="contentBox"><Accordion.Collapse eventKey="1">
-                        <p id="aboutContent">
+                        <div id="aboutContent">
                             <li>
                                 Jem Generalao
                             </li>
@@ -159,7 +159,7 @@ class About extends Component
                             <li>
                                 <a href="https://www.linkedin.com/in/alexander-jogie-6281a8187/">LinkedIn</a>
                             </li></ul>
-                        </p>
+                        </div>
                     </Accordion.Collapse></div>
                 </Accordion>
             </div>
