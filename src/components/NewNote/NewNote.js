@@ -261,12 +261,13 @@ useEffect(() => {
                   )
                 }})}
                 {/*<input type="file" onChange={handleChange}/> */}
-                <div className="file-input">
-                  <input type="file" id="file" className="file" onChange={handleChange}/>
-                  <label for="file">Select file</label>
-                </div>
                 
                 <div className="file-input">
+                  <input className="file" type="file" onChange={handleChange}/>
+                  <label for="file">Select Image</label>
+                </div>
+                
+                <div className="file-input" >
                   <input className="file" type="submit" onClick={filePost}/>
                   <label for="submit">Submit</label>
                 </div>
