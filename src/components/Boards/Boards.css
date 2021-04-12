@@ -39,3 +39,9 @@
     display:table;
     margin: 0 auto;
 }
+.titleText{
+    font-family: 'Anton', sans-serif;
+}
+.card-title h5{
+    font-family: 'Anton', sans-serif;
+}

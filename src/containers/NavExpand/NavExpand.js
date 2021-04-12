@@ -41,7 +41,7 @@ class NavExpand extends Component {
                 <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={this.showNav}/>
                 </Link>
-                <Navbar.Brand className="navTitle" href="/">Notes</Navbar.Brand>      
+                <Navbar.Brand className="navTitle" href="/">Manifest</Navbar.Brand>      
             </Navbar>
             <nav className={this.state.showSidebar ? "sideNav active" : "sideNav"}>
             <ul className="navigation">
