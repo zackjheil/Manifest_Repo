@@ -8,16 +8,22 @@
     color: black;
     font-weight: 900;
     margin-bottom: 0px;
-}#aboutSubitle
+}
+#aboutSubitle
 {
     padding: 0px;
-    margin-bottom: 0px;
-    margin-right: 20px;
+    margin: 5px, 0px, 0px !important;
+
+}
+#accordionButton{
+border: black;
+border-width: 10px;
 }
 #contentBox
 {
     color: black;
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     margin-bottom: 0px;
 }

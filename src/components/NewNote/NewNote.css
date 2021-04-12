@@ -60,7 +60,7 @@
     position: absolute;
 }
 
-.file-input label
+.file-input
 {
     display: block;
     position: relative;
@@ -77,4 +77,5 @@
     cursor: pointer;
     transition: transform .2s ease-out;
     font-size: medium;
+    margin: 10px;
 }

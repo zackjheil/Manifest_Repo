@@ -20,16 +20,16 @@ class About extends Component
                 </div>
                 <h2 id="aboutTitle">Team</h2></center>
                 <Accordion defaultActiveKey="0">
-                    <center><Accordion.Toggle as={Button} variant="link" eventKey="1" id="aboutSubtitle"><h5>Leads</h5></Accordion.Toggle></center>
+                    <center><Accordion.Toggle as={Button} variant="link" eventKey="1" id="aboutSubtitle"><h5 id="accordionButton">Leads</h5></Accordion.Toggle></center>
                         <div id="contentBox"><Accordion.Collapse eventKey="1">
                             <div id="aboutContent">
                             
                                 <h5 id="nameHeader">
                                     Joshua Ducharme-Baribeau
                                 </h5>
-                                    <h7 id="aboutSubtitle">
+                                    <p id="aboutSubtitle">
                                         Lead Producer - Project Oversight, Organization and Quality Assurance
-                                    </h7>
+                                    </p>
                                         <ul><li>
                                             Email: joshuaducharmebaribeau@hotmail.com
                                         </li>
@@ -40,9 +40,9 @@ class About extends Component
                                 <h5 id="nameHeader">
                                     Zachary Heil
                                 </h5>
-                                    <h7 id="aboutSubtitle">
+                                    <p id="aboutSubtitle">
                                         Co-Producer, Programming Lead – Project Oversight and Technology 
-                                    </h7>
+                                    </p>
                                     <ul><li>
                                         Email: zackjheil@gmail.com  
                                     </li></ul>
@@ -50,9 +50,9 @@ class About extends Component
                                 <h5 id="nameHeader">
                                     Hashim Khan
                                 </h5>
-                                    <h7 id="aboutSubtitle">
+                                    <p id="aboutSubtitle">
                                         Director and Design Lead – Design team oversight, organization, UI/UX design 
-                                    </h7>
+                                    </p>
                                     <ul><li>
                                         Email: hk18my@brocku.ca 
                                     </li>
@@ -71,9 +71,9 @@ class About extends Component
                             <h5 id="nameHeader" id="nameHeader">
                                 Ethan Bowbyes
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     UX/UI Design, Market Research 
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: eb18gz@brocku.ca
                                 </li>
@@ -83,9 +83,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Annabelle Chan
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     UX/UI Design
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: okokannabelle@gmail.com
                                 </li>
@@ -95,9 +95,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Fariha Khan
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     2D Concept Artist
-                                </h7>
+                                </p>
                                 <ul><li>
                                     <a href="https://www.senpai-khan.com">Portfolio</a>
                                 </li>
@@ -107,9 +107,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Eugene Payne
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     UX/UI Design
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: jago20002010@gmail.com
                                 </li></ul>
@@ -125,9 +125,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Jem Generalao
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     Lead Front-End Programmer - Features and Styling
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: j.generalao@hotmail.com
                                 </li>
@@ -140,9 +140,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Argha Ghosh Dastidar
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     Programmer - Data Handling and Technical Programming 
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: arghaghoshd@gmail.com
                                 </li>
@@ -155,9 +155,9 @@ class About extends Component
                             <h5 id="nameHeader">
                                 Alexander Jogie
                             </h5>
-                                <h7 id="aboutSubtitle">
+                                <p id="aboutSubtitle">
                                     Programmer - Features and Styling
-                                </h7>
+                                </p>
                                 <ul><li>
                                     Email: jogiealexander@gmail.com
                                 </li>
