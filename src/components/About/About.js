@@ -8,7 +8,7 @@ class About extends Component
     render()
     {
         return(
-            <div>
+            <div id="text-position">
                 <h1 id="aboutTitle">Manifest</h1>
                 <div id="contentBox">
                     <p id="aboutContent">“Manifest” is a web application designed to offer each of its users a customizable approach to making notes and visualizing ideas and tasks on-the-go. This web-hosted application is accessible from any browser and installable with minimal storage requirements so you can install it on your smart phone for when you don’t have access to the office you deserve. Manifest allows users to organize their notes in a non-linear format with resizable notes which can be easily manipulated. Users can be confident that their personal data never reaches our server and maintains optimal privacy.</p>

@@ -10,7 +10,7 @@
 .navTitle
 {
     font-size: 1rem;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Assistant', sans-serif;
     letter-spacing: 0.2rem;
     text-decoration: none;
     color: grey;
@@ -25,11 +25,12 @@
 {
     color: black;
     font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
     border-bottom: 1px solid white;
     /**border-top: 1px solid white;**/
     width: 125%;
     margin-bottom:10%;
-    margin-left: -24%;
+    margin-left: -33%;
 }
 .menu-bars{
     max-width: 10vw;
@@ -71,5 +72,12 @@
 }
 .navToggle{
     min-height: 3rem;
-    margin-left: -24%;
+    margin-left: 58%;
+    border-style: hidden;
+    border-radius: 20%;
+    border-color: white;
+    border-width: thin;
+    padding-left: 3%;
+    padding-bottom: 3%;
+    
 }

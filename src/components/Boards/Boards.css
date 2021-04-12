@@ -40,8 +40,8 @@
     margin: 0 auto;
 }
 .titleText{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
-.card-title h5{
-    font-family: 'Anton', sans-serif;
+.card-body{
+    font-family: 'Oswald', sans-serif;
 }
