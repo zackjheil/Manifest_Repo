@@ -40,6 +40,10 @@ useEffect(() => {
   
   return(
           <div >
+            if(!localStorage["alertdisplayed"]) {
+    alert("Your text")
+    localStorage["alertdisplayed"] = true
+}
             <audio
             autoPlay={true}>
               <source type="audio/mp3" src={ManifestJingle}/>
