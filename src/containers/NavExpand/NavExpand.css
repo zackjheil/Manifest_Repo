@@ -6,6 +6,7 @@
     justify-content: start;
     align-items: center;
     margin-bottom: 10px; /*Josh did this :)*/
+    
 }
 .navTitle
 {
@@ -14,6 +15,7 @@
     letter-spacing: 0.2rem;
     text-decoration: none;
     color: grey;
+    margin-right: 0px !important;
     /**border: 1px solid white;
     border-radius: 10px;
     padding: 0;**/
@@ -27,15 +29,16 @@
     font-family: 'Oswald', sans-serif;
     border-bottom: 1px solid white;
     /**border-top: 1px solid white;**/
-    width: 125%;
+    width: 103%;
     margin-bottom:10%;
-    margin-left: -33%;
+    margin-left: 0%;
 }
 .menu-bars{
     max-width: 10vw;
     font-size: 2rem;
     justify-content: start;
     color: #E2BBFA;
+    z-index: 2;
 }
 .menu-bars:focus{
     color: #E2BBFA;
@@ -50,8 +53,8 @@
     justify-content:left;
     position: fixed;
     top:0;
-    max-width: 50vw;
-    min-width: 20vw;
+    max-width: 45vw;
+    min-width: 40vw;
     min-height: 100vh;
     left:-100%;
     transition: 850ms;
@@ -62,21 +65,31 @@
     transition: 850ms;
 }
 .navigation{
-    justify-content: left;
+    margin: 0px;
+    padding-left: 0px;
+    margin-right: 3%;
+    margin-left: 3%;
     list-style: none;
 }
 .navLinks a{
+    width: 125%;
+    margin: 0px;
     text-decoration: none;
     color: white;
 }
 .navToggle{
     min-height: 3rem;
-    margin-left: 58%;
     border-style: hidden;
     border-radius: 20%;
     border-color: white;
     border-width: thin;
-    padding-left: 3%;
-    padding-bottom: 3%;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-align: right;
     
+}
+.h1Title
+{
+    color: white;
+    max-height: 75px;
 }
