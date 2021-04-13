@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import {Form, Button, Container} from 'react-bootstrap';
+import {Form, Button, Container, } from 'react-bootstrap';
 import uniqid from 'uniqid';
 import Localbase from 'localbase';
 import {Card} from 'react-bootstrap';
@@ -8,9 +8,46 @@ import * as ManiF from '../helpers.js';
 import './NewNote.css'
 import DeleteButton from '../../assets/Buttons/DeleteButton.svg'
 import AddNote from '../../assets/Note_Icon.svg'
+import {Popover} from '@material-ui/core'
+import {UncontrolledPopover, PopoverHeader, PopoverBody} from 'reactstrap'
+import { eventListeners } from '@popperjs/core';
+
+
+
 
 let db = new Localbase('Mani');
 // Object { title: "", text: "", id: "" }
+
+
+//Functions For the Emoticons
+function Happy(){
+  function handleChange(event){
+    const reader = new FileReader();
+   
+          reader.addEventListener("load", ()  => {
+         db.collection('Emoticons').add({Emotions:document.getElementById("IMGHappy")});
+          });
+          reader.readAsDataURL(event.target.files[0]);
+  }
+
+  document.getElementById("Emo-Frame").src=db.collection('Emoticons').get
+}
+
+function Sad(){
+}
+function Confused(){
+  }
+function Angry(){
+  }
+function Excited(){
+  }
+function Heartbroken(){
+  }
+function Anxious(){
+  }
+function Flustrated(){
+}
+
 
 
 const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde,notetitle}) => {
@@ -221,6 +258,27 @@ useEffect(() => {
 
         <Container>
           <textarea rows="1" className="Header" onChange={changeTitle}>{notetitle}</textarea>
+         <img id="Emo-Frame" src=''></img>
+    <div>
+      <Button id="PopoverClick" type="button">
+        How Do You Feel?
+      </Button>
+      {' '}
+      <UncontrolledPopover trigger="click" placement="bottom" target="PopoverClick">
+        <PopoverHeader>Emotions</PopoverHeader>
+        <PopoverBody>
+        <button id="Angry"> <img id="Angry" src="http://192.168.0.3:8080/Angry.png"></img> </button>
+        <button id="Happy" onClick={Happy}> <img id="IMGHappy" src="http://192.168.0.3:8080/Happy.png"></img> </button>
+        <button id="Anxious"> <img id="Anxious" src="http://192.168.0.3:8080/Anxious.png"></img> </button>
+        <button id="Confused"> <img id="Confused"src="http://192.168.0.3:8080/Confussed.png"></img> </button>
+        <button id="Excited"> <img id="Excited" src="http://192.168.0.3:8080/Excited.png"></img> </button>
+        <button id="Flustrated"> <img id="Flustrated" src="http://192.168.0.3:8080/Flustrated.png"></img> </button>
+        <button id="Sad"> <img id="Sad" src="http://192.168.0.3:8080/Sad.png"></img> </button>
+        <button id="Heartbroken"> <img id="Heartbroken" src="http://192.168.0.3:8080/Heartbroken.png"></img> </button>
+        </PopoverBody>
+      </UncontrolledPopover>
+
+</div>
         {/*----------Professor Mauro's code if we need to fall back to it----------------
         <Form onSubmit={saveNote}>
             <Form.Group>
