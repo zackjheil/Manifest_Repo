@@ -55,17 +55,17 @@
 .file
 {
     opacity: 0;
-    width: 0.1px;
-    height: 0.1px;
+    width: 100px;
+    height: 50px;
     position: absolute;
 }
 
-.file-input label
+.file-input
 {
     display: block;
     position: relative;
-    width: 100px;
-    height: 50px;
+    width: 125px;
+    height: 50x;
     border-radius: 25px;
     background: linear-gradient(40deg, #ff6ec4, #7873f5);
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
@@ -77,4 +77,5 @@
     cursor: pointer;
     transition: transform .2s ease-out;
     font-size: medium;
+    margin: 10px;
 }
