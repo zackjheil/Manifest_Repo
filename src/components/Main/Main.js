@@ -5,6 +5,7 @@ import Tooltip from '../Tooltips/Tooltips';
 import Localbase from 'localbase';
 import * as ManiF from '../helpers.js';
 import './Main.css'
+import ManifestJingle from '../../assets/ManifestJingle.mp3';
 import PlusButton from "../../assets/Buttons/AddButton.svg"
 import DeleteButton from "../../assets/Buttons/DeleteButton.svg"
 let db = new Localbase('Mani')
@@ -39,6 +40,10 @@ useEffect(() => {
   
   return(
           <div >
+            <audio
+            autoPlay={true}>
+              <source type="audio/mp3" src={ManifestJingle}/>
+            </audio>
             <Container>
             <div >
               <Tooltip content="These are your boards!">
