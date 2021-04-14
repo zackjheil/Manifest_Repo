@@ -56,7 +56,7 @@ class NavExpand extends Component {
                         </Link>
                     </p>
 
-                    <p><center> <img src={ManiLogo} alt="Add" style={{width:74, height:74, marginLeft: 0}}/> </center></p>
+                    <p><center> <img src={ManiLogo} alt="Add" style={{width:100, height:100, marginLeft: 0}}/> </center></p>
 
                     <p className="navLinks">
                         <Link to="/"> <img src={BoardsButton} alt="Add" style={{width:34, height:34, marginLeft: 0}}/> Boards </Link>
