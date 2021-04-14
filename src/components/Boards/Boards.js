@@ -46,7 +46,6 @@ function addNoteToDB(ide, notes){
       db.collection('boards').doc({id:ide}).update({
       notes:notes
     })
-
   }
 function deleteNoteFromDB(ide,notes,givenId){
         var n=notes.findIndex(a => a.id===givenId)
@@ -109,6 +108,7 @@ function changeBoardTitle(event){
                     </Card.Body>
             </Card>
             ))*/}
+            <div id='notes'>
             {notes.map((a)=>{
                 var linker=boardtitle+'/'+a.title
                 return(
@@ -125,6 +125,7 @@ function changeBoardTitle(event){
                 )
                 
                 })}
+            </div>
                  
                  <button className="addNote" onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit"><img src={PlusButton} alt="Add"/></button>
             </Container>

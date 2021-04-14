@@ -83,3 +83,11 @@
     height: 2050px;
     width: 1010px;
 }
+
+.emotion.card{
+    width:50%;
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    padding-bottom: 20px;
+}
