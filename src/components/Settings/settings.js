@@ -5,7 +5,7 @@ import {Button} from 'react-bootstrap';
 import './settings.css';
 const Settings = () => {
     return(
-        <div>
+        <div className="appWidth">
             <Button onClick={ManiF.deleteCollection}>Erase All</Button>
         </div>
     )

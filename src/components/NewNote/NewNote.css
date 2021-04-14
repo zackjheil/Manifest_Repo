@@ -91,3 +91,8 @@
     border-color: transparent;
     padding-bottom: 20px;
 }
+.appWidth{
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}

@@ -38,5 +38,9 @@ border-width: 10px;
     font-size: 20px;
 }
 #text-position{
-    margin-right: 10px;
+
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
 }
+

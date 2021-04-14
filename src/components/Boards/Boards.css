@@ -48,3 +48,8 @@
 .Header{
     font-family: 'Oswald', sans-serif;
 }
+.appWidth{
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}

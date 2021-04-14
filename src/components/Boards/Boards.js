@@ -93,7 +93,7 @@ function changeBoardTitle(event){
   }, []);
 
     return (
-        <div>
+        <div className="appWidth">
             <Container>
             <textarea rows="1" className="Header" onChange={changeBoardTitle}>{boardtitle}</textarea>
             {/*----------Professor Mauro's code if we need to fall back to it----------------

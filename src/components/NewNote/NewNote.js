@@ -404,6 +404,7 @@ useEffect(() => {
     return (
 
         <Container>
+          <div className="appWidth">
           <textarea rows="1" className="Header" onChange={changeTitle}>{notetitle}</textarea>
          <img id="Emo-Frame" src=''></img>
     <div>
@@ -491,6 +492,7 @@ useEffect(() => {
                   <label for="submit">Submit</label>
                 </div>
                 <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
+          </div>
         </Container>
     )
 }

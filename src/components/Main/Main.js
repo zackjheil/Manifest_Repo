@@ -39,9 +39,8 @@ useEffect(() => {
         
   
   return(
-          <div >
-            <audio
-            autoPlay={true}>
+          <div className="appWidth">
+            <audio autoPlay={true} preload="auto" >
               <source type="audio/mp3" src={ManifestJingle}/>
             </audio>
             <Container>

@@ -41,7 +41,7 @@ class NavExpand extends Component {
     render()
     {
         return(
-            <div>
+            <div style= {{maxwidth: 900, textalign:"center", margin:"auto"}}>
             <Navbar collapseOnSelect expand="menuButton" className="navExpand">
                 <Link to="#" className="menu-bars">
                     <FaIcons.FaBars onClick={this.showNav}/>

@@ -28,7 +28,9 @@ function App() {
       <Layout>
         <NavExpand />
       </Layout>
+      
       <Switch>
+        
         <Route exact path="/">
           <MainPage notebook={notebook} setNotebook={setNotebook} setBoardTitle={setBoardTitle} setNotes={setNote} setIde={setIde} />
         </Route>
@@ -44,6 +46,7 @@ function App() {
         <Route exact path="/:boardID/:noteID">
           <NewNote noteele={noteele} ide={ide} setNotes={setNote} setNote2={setNote2} note2={note2} noteId={noteId} notes={note} setNoteele={setNoteele} setIde={setIde} notetitle={notetitle}/>
         </Route>
+        
       </Switch>
     </div>
   );

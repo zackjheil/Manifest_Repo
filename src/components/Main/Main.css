@@ -45,3 +45,8 @@
     margin: 0 auto;
     
 }
+.appWidth{
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}
