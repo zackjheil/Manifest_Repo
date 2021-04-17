@@ -53,7 +53,7 @@ const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,se
 --------------------------------------------------------------------------------*/
   {/*console.log(ide)*/}
 
-function addNoteEleToDB(){
+{/*function addNoteEleToDB(){
     var n=noteele.length+1
       db.collection('boards').doc({id:ide}).get().then(doc =>{
       setNotes(doc.notes)
@@ -75,7 +75,7 @@ function addNoteEleToDB(){
     db.collection('boards').doc({id:ide}).update({
       notes:notes
     })
-  }
+  }        //////NOT USED///////    */}
 
 
   function deleteNoteEleFromDB(givenId){
@@ -142,12 +142,12 @@ function addNoteEleToDB(){
       })
       var n=noteele.length+1
       noteele.push({
-      id:n,
-      type:'textNote',
-      iurl:null,
-      content: ""
-    })
-    notes.filter(note =>{
+        id:n,
+        type:'textNote',
+        iurl:null,
+        content: ""
+      })
+      notes.filter(note =>{
         if(note.id===noteId){
           note.noteele.push({
             id:n,
@@ -208,7 +208,7 @@ function addNoteEleToDB(){
   function getNoteEles(){
     db.collection('boards').doc({id:ide}).get().then(doc =>{
       if(doc){
-      setNotes(doc.notes)
+        setNotes(doc.notes)
         notes.filter(note =>{
           if(note && note.id===noteId){
             setNoteele(note.noteele)
@@ -394,7 +394,12 @@ function addNoteEleToDB(){
   }
 
 
-
+  useEffect(() => {
+    const interval=setInterval(() => {
+      getNoteEles();  
+    }, 500);
+    return() =>clearInterval(interval)
+  }, []);
     return (
 
         <Container>
@@ -476,7 +481,7 @@ function addNoteEleToDB(){
                 })}
                 {/*<input type="file" onChange={handleChange}/> */}
                 
-                <button className="addTextBox" onClick={textNote, getNoteEles()} > <img src={AddNote} alt="Add Note" /></button> {/*add button*/}
+                <button className="addTextBox" onClick={textNote} > <img src={AddNote} alt="Add Note" /></button> {/*add button*/}
                 
                 <div className="sbs">  
                   <div className="file-input">
@@ -485,7 +490,7 @@ function addNoteEleToDB(){
                   </div>
                 
                   <div className="file-input" >
-                    <input className="file" type="submit" onClick={filePost, getNoteEles()}/>                         {/*submit file */}
+                    <input className="file" type="submit" onClick={filePost}/>                         {/*submit file */}
                     <label for="submit">Post Image</label>
                   </div>
                 </div>
