@@ -34,7 +34,6 @@
 
 
 .addTextBox{
-
     background-color: transparent;
     background-repeat: no-repeat;
     padding-top: 0px;
@@ -95,4 +94,7 @@
     max-width: 900px;
     text-align:center;
     margin:auto;
+}
+.sbs{
+    display: inline-flex;
 }

@@ -13,9 +13,8 @@ import {UncontrolledPopover, PopoverHeader, PopoverBody} from 'reactstrap'
 import { eventListeners } from '@popperjs/core';
 
 
-
-
 let db = new Localbase('Mani');
+db.config.debug = false
 // Object { title: "", text: "", id: "" }
 
 
@@ -23,7 +22,7 @@ let db = new Localbase('Mani');
 
 
 const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde,notetitle}) => {
-  console.log(notetitle)
+ {/* console.log(notetitle)*/}
   
   window.onbeforeunload = function() { 
   window.setTimeout(function () { 
@@ -52,7 +51,7 @@ const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,se
 
     //console.log(setNotes)
 --------------------------------------------------------------------------------*/
-console.log(ide)
+  {/*console.log(ide)*/}
 
 function addNoteEleToDB(){
     var n=noteele.length+1
@@ -183,20 +182,20 @@ function addNoteEleToDB(){
   function textNoteHandleChange(givenId){
       var tArea=document.getElementById(givenId)
       var cont=tArea.value
-      console.log(tArea)
+      {/*console.log(tArea)*/}
     db.collection('boards').doc({id:ide}).get().then(doc =>{
 
         setNotes(doc.notes)
       })
-      console.log(noteele)
-      console.log(givenId)
+      {/*console.log(noteele)
+      console.log(givenId)*/}
       var n=noteele.findIndex(a => a.id===givenId)
-      console.log(n)
+      {/*console.log(n)*/}
       notes.filter(note =>{
         if(note.id===noteId){
+          {/*console.log(note)
           console.log(note)
-          console.log(note)
-          console.log(n)
+        console.log(n)*/}
           note.noteele[n].content=cont
         }
       })
@@ -395,12 +394,7 @@ function addNoteEleToDB(){
   }
 
 
-useEffect(() => {
-  const interval=setInterval(() => {
-    getNoteEles();  
-  }, 500);
-  return() =>clearInterval(interval)
-}, []);
+
     return (
 
         <Container>
@@ -482,16 +476,21 @@ useEffect(() => {
                 })}
                 {/*<input type="file" onChange={handleChange}/> */}
                 
-                <div className="file-input">
-                  <input className="file" type="file" onChange={handleChange}/>
-                  <label for="file">Select Image</label>
-                </div>
+                <button className="addTextBox" onClick={textNote, getNoteEles()} > <img src={AddNote} alt="Add Note" /></button> {/*add button*/}
                 
-                <div className="file-input" >
-                  <input className="file" type="submit" onClick={filePost}/>
-                  <label for="submit">Submit</label>
+                <div className="sbs">  
+                  <div className="file-input">
+                    <input className="file" type="file" onChange={handleChange}/>                         {/*select file */}
+                    <label for="file">Select Image</label>
+                  </div>
+                
+                  <div className="file-input" >
+                    <input className="file" type="submit" onClick={filePost, getNoteEles()}/>                         {/*submit file */}
+                    <label for="submit">Post Image</label>
+                  </div>
                 </div>
-                <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
+
+                
           </div>
         </Container>
     )

@@ -5,7 +5,8 @@ import './Boards.css';
 import Localbase from 'localbase';
 import PlusButton from "../../assets/Buttons/AddButton.svg"
 import DeleteButton from '../../assets/Buttons/DeleteButton.svg'
-
+  let db = new Localbase('Mani');
+  db.config.debug = false
 
 const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle}) => {
   window.onbeforeunload = function() { 
@@ -15,8 +16,7 @@ const Boards = ({notes,ide,setNotes,boardtitle,setNoteId,setNoteele,setNoteTitle
     window.onbeforeunload = null; 
   }
 
-    let db = new Localbase('Mani');
-    console.log(boardtitle)
+
     
 /*----------Professor Mauro's code if we need to fall back to it----------------
     function deleteBoard(id, db) {
@@ -51,7 +51,7 @@ function deleteNoteFromDB(ide,notes,givenId){
         var n=notes.findIndex(a => a.id===givenId)
         
             notes.splice(n,1)
-            console.log(notes)
+            {/*console.log(notes)*/}
       db.collection('boards').doc({id:ide}).update({
         notes:notes
       })
@@ -60,7 +60,7 @@ function deleteNoteFromDB(ide,notes,givenId){
 
 function getNotes(){
       db.collection('boards').doc({id:ide}).get().then(doc =>{
-          console.log(doc)
+          {/*console.log(doc)*/}
         if(doc){
         setNotes(doc.notes)
         }
@@ -85,12 +85,7 @@ function changeBoardTitle(event){
 
 
 
-    useEffect(() => {
-    const interval=setInterval(() => {
-      getNotes();  
-    }, 500);
-    return() =>clearInterval(interval)
-  }, []);
+
 
     return (
         <div className="appWidth">
@@ -127,7 +122,7 @@ function changeBoardTitle(event){
                 })}
             </div>
                  
-                 <button className="addNote" onClick={()=>{addNoteToDB(ide,notes)}} variant="info" type="submit"><img src={PlusButton} alt="Add"/></button>
+                 <button className="addNote" onClick={()=>{addNoteToDB(ide,notes)}} onFocus={getNotes()} onvariant="info" type="submit"><img src={PlusButton} alt="Add"/></button>
             </Container>
         </div>
     )

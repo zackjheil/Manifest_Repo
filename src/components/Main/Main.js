@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Card,ListGroup, Nav, Container, Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import Tooltip from '../Tooltips/Tooltips';
@@ -6,9 +6,10 @@ import Localbase from 'localbase';
 import * as ManiF from '../helpers.js';
 import './Main.css'
 import ManifestJingle from '../../assets/ManifestJingle.mp3';
-import PlusButton from "../../assets/Buttons/AddButton.svg"
-import DeleteButton from "../../assets/Buttons/DeleteButton.svg"
+import PlusButton from "../../assets/Buttons/AddButton.svg";
+import DeleteButton from "../../assets/Buttons/DeleteButton.svg";
 let db = new Localbase('Mani')
+db.config.debug = false
 
 const mainpage = ({notebook,setNotebook,setBoardTitle,setNotes,setIde}) => {
 
@@ -30,12 +31,6 @@ function getBoards(db) {
 }
 
 
-useEffect(() => {
-    const interval=setInterval(() => {
-      getBoards(db);  
-    }, 500);
-    return() =>clearInterval(interval)
-  }, []);
         
   
   return(
@@ -84,7 +79,7 @@ useEffect(() => {
                 })}
                 
               
-              <button className="addButton"><img src={PlusButton} alt="Add" onClick={addBoardToDB} /></button>
+              <button className="addButton"><img src={PlusButton} alt="Add" onClick={addBoardToDB} onFocus={getBoards(db)} /></button>
               
             </Container>
           </div>
