@@ -28,12 +28,12 @@
     border: transparent;
     margin-left: auto;
     display: table;
-    
-    
+   
 }
 
 
 .addTextBox{
+
     background-color: transparent;
     background-repeat: no-repeat;
     padding-top: 0px;
@@ -84,17 +84,58 @@
 }
 
 .emotion.card{
-    width:50%;
+    max-width: 35px;
+    max-height: 35px;
+    scale: 1%;
     background-color: transparent;
     color: transparent;
     border-color: transparent;
-    padding-bottom: 20px;
+    padding-bottom: 80px;
+    position: absolute;
+    top: 22.5%;
+    left: 81.5%;
 }
-.appWidth{
-    max-width: 900px;
-    text-align:center;
-    margin:auto;
+#deleteButton{
+background-color: transparent;
+border-color: transparent;
+position:absolute;
+top: 0%;
+bottom: 5px;
+left: 68%;
+max-width: 10px;
+max-height: 25px;
+width: 10px;
+height: 10px;
 }
-.sbs{
-    display: inline-flex;
+
+#PopoverClick{
+    display: block;
+    position: relative;
+    width: 130px;
+    height: 45px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    font-size: medium;
+    margin: 5px;
+}
+#Poppy1{
+    background-color:  transparent;
+    border-color: transparent;
+}
+#IMGAngry{
+background-color: none;
+border-color: none;
+border: none;
+}
+
+#Poppy2{
+    background-color: transparent;
+    border-color: transparent;
 }
