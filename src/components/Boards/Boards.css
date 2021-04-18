@@ -1,0 +1,55 @@
+.cardBoard {
+    width: 100%;
+    margin-bottom:3%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-color: white;
+    
+    
+    
+}
+.Header{
+    width:100%;
+    resize:none;
+    text-align: center;
+    font-size: 48px;
+    background-color: aliceblue;
+    border: none;
+}
+
+.cardBoard.card{
+    background-color: #ABDA8A;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.deleteButton{
+    
+    border-radius: 8px;
+}
+
+.addNote{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    size: 20px;
+    color: transparent;
+    border: transparent;
+    display:table;
+    margin: 0 auto;
+}
+.titleText{
+    font-family: 'Oswald', sans-serif;
+}
+.card-body{
+    font-family: 'Assistant', sans-serif;
+}
+.Header{
+    font-family: 'Oswald', sans-serif;
+}
+.appWidth{
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}

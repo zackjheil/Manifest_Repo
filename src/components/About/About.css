@@ -1,0 +1,46 @@
+#aboutTitle
+{
+    padding: 10px;
+    margin-bottom: 0px;
+}
+#nameHeader
+{
+    color: black;
+    font-weight: 900;
+    margin-bottom: 0px;
+}
+#aboutSubitle
+{
+    padding: 0px;
+    margin: 5px, 0px, 0px !important;
+
+}
+#accordionButton{
+border: black;
+border-width: 10px;
+}
+#contentBox
+{
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 0px;
+}
+#aboutContent
+{
+    font-size: 115%;
+    padding: 20px;
+    margin-bottom: 0px;
+}
+#name
+{
+    font-size: 20px;
+}
+#text-position{
+
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}
+

@@ -1,0 +1,52 @@
+.titleText{
+    color: white;
+    
+}
+.testBox{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-color: white;
+    
+}
+.Cards{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+    
+    
+}
+.deleteButton{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    color: transparent;
+    border: transparent;
+    margin-left: auto;
+    display: table;
+}
+
+
+.Cards.card{
+    
+    color: black;
+    background-color: #E0D487;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addButton{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    size: 20px;
+    color: transparent;
+    border: transparent;
+    display:table;
+    margin: 0 auto;
+    
+}
+.appWidth{
+    max-width: 900px;
+    text-align:center;
+    margin:auto;
+}
