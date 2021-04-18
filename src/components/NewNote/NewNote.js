@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from 'react';
 import {Form, Button, Container, } from 'react-bootstrap';
 import uniqid from 'uniqid';
@@ -13,9 +12,8 @@ import {UncontrolledPopover, PopoverHeader, PopoverBody} from 'reactstrap'
 import { eventListeners } from '@popperjs/core';
 
 
-
-
 let db = new Localbase('Mani');
+db.config.debug = false
 // Object { title: "", text: "", id: "" }
 
 
@@ -23,7 +21,7 @@ let db = new Localbase('Mani');
 
 
 const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,setIde,notetitle}) => {
-  console.log(notetitle)
+ {/* console.log(notetitle)*/}
   
   window.onbeforeunload = function() { 
   window.setTimeout(function () { 
@@ -34,13 +32,11 @@ const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,se
     /*----------Professor Mauro's code if we need to fall back to it----------------
     const [form, setForm] = useState({title: '', text: ''})
     const [id, setId] = useState(uniqid())
-
     function handleInputChange(event) {
         const {value, name} = event.target
         setForm({...form, [name]: value, id})
         //console.log(form)
     }
-
     function saveNote() {
         if (form.title !== '' || form.text !== ''){
             setNotes(note => [...note, form]);
@@ -49,12 +45,11 @@ const Newnote = ({ide,notes,setNote2,note2,noteId,setNotes,noteele,setNoteele,se
             db.collection('dbnotes').add(form)
         }
     }
-
     //console.log(setNotes)
 --------------------------------------------------------------------------------*/
-console.log(ide)
+  {/*console.log(ide)*/}
 
-function addNoteEleToDB(){
+{/*function addNoteEleToDB(){
     var n=noteele.length+1
       db.collection('boards').doc({id:ide}).get().then(doc =>{
       setNotes(doc.notes)
@@ -76,7 +71,7 @@ function addNoteEleToDB(){
     db.collection('boards').doc({id:ide}).update({
       notes:notes
     })
-  }
+  }        //////NOT USED///////    */}
 
 
   function deleteNoteEleFromDB(givenId){
@@ -143,12 +138,12 @@ function addNoteEleToDB(){
       })
       var n=noteele.length+1
       noteele.push({
-      id:n,
-      type:'textNote',
-      iurl:null,
-      content: ""
-    })
-    notes.filter(note =>{
+        id:n,
+        type:'textNote',
+        iurl:null,
+        content: ""
+      })
+      notes.filter(note =>{
         if(note.id===noteId){
           note.noteele.push({
             id:n,
@@ -183,20 +178,20 @@ function addNoteEleToDB(){
   function textNoteHandleChange(givenId){
       var tArea=document.getElementById(givenId)
       var cont=tArea.value
-      console.log(tArea)
+      {/*console.log(tArea)*/}
     db.collection('boards').doc({id:ide}).get().then(doc =>{
 
         setNotes(doc.notes)
       })
-      console.log(noteele)
-      console.log(givenId)
+      {/*console.log(noteele)
+      console.log(givenId)*/}
       var n=noteele.findIndex(a => a.id===givenId)
-      console.log(n)
+      {/*console.log(n)*/}
       notes.filter(note =>{
         if(note.id===noteId){
+          {/*console.log(note)
           console.log(note)
-          console.log(note)
-          console.log(n)
+        console.log(n)*/}
           note.noteele[n].content=cont
         }
       })
@@ -209,7 +204,7 @@ function addNoteEleToDB(){
   function getNoteEles(){
     db.collection('boards').doc({id:ide}).get().then(doc =>{
       if(doc){
-      setNotes(doc.notes)
+        setNotes(doc.notes)
         notes.filter(note =>{
           if(note && note.id===noteId){
             setNoteele(note.noteele)
@@ -395,15 +390,16 @@ function addNoteEleToDB(){
   }
 
 
-useEffect(() => {
-  const interval=setInterval(() => {
-    getNoteEles();  
-  }, 500);
-  return() =>clearInterval(interval)
-}, []);
+  useEffect(() => {
+    const interval=setInterval(() => {
+      getNoteEles();  
+    }, 500);
+    return() =>clearInterval(interval)
+  }, []);
     return (
 
         <Container>
+          <div className="appWidth">
           <textarea rows="1" className="Header" onChange={changeTitle}>{notetitle}</textarea>
          <img id="Emo-Frame" src=''></img>
     <div>
@@ -411,9 +407,9 @@ useEffect(() => {
         How Do You Feel?
       </Button>
       {' '}
-      <UncontrolledPopover id="Poppy2" trigger="click" placement="bottom" target="PopoverClick">
-        <PopoverHeader id="Poppy1">Emotions</PopoverHeader>
-        <PopoverBody id="Poppy2">
+      <UncontrolledPopover trigger="click" placement="bottom" target="PopoverClick">
+        <PopoverHeader>Emotions</PopoverHeader>
+        <PopoverBody>
         <button id="Angry" onClick={Angry}> <img id="IMGAngry" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAfCAYAAAB+tjR7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAU+SURBVHgBtVhPaBxVGP8lLSQWNLMoFEGS2R6qqGk3B73YkoniwZqSLenJFHZXL00rbCKCtpfdXCLx4CaHpqfSBBIsgmRXU6u0sBMTERSykwRFKySzxUPjwUwUNBUh/b6ZN5uXzU529k9/8DGz7828+b3v/b7vfW8b4B8aWSdZiE1tbVG50drcIntg0K1JppNlxH0tiIqxTLmxwceLYbK4dqJVC58+is4TbVDbWqC0NBceYMLG8jqWVtYxMbUMY+UPnZonyCZRORJkSTiTDvslyx5MhbuPavELL0E72Qa/0OfzmJheweT0cpp+DqK0p1Uen8wiG5KeWRN9Q4J0WbLxI6qSvDb+plIJyWJMTC9j+OPvzN9WN5hwuqh7QJB1cUYQzonfQfiQQSLUfjg5c+MsSJeoFea9TXS9McXXKPbKgtt42VUy1n1MIhuA43WIfrOYbJyIjmZv9e3SZB0Jd8EJHBmsyxmJIMtAwU7AqnCCW2+UXlLJk6Ps0XoStQemFcreOoeA0jQjPi5DEVdL2KD7GhzPa27/Aeml3MynZ5XQscN4FGAHNDUfbP7mzioHrisH9upVMvbODTgZwBD9vOq/kM2RXSIbcT0bjfYdU2sJJj8YuPAyZZVWDY633OV3l5wJZsm24eiWr6xhDkSd33fJJhKXT9o3nC8p5aBesKwtDH00b+di+0OX7O8kBEFTEGFS17Gz5IogeV0e6yBZiBK+6kZ+7PyXnNRh/PwkUiOngf8XURUan4b1z/MItvcSYQvKE82IX3TytdLSpNGuZ8JJT4woRMTD0WxITIjbx+BIw/ZsONz9bOEbHLkM9UgHKakXOPQ+xq6uFDxTDmbewuRn5IND70J56lWEQiG73aDdzQVJji/y7tQjrktw8nFSkEy7RBns2c5OSascYPr8PSSTSdsjhmHAWPwW8f52+CJLk42+M26Pwe/rum63k1YLzxx3gjgkveZmBENqGygemyNubfvvy6rbwJrtOjXFxUnhIcoSoG0XfjH4wW2Mjv9Y+E0ys1OXPKHgC1fkvZ+JRbCzi5VEA6WU7Y3f39vVyINlZn+179nrtFFAnszcQh5reUcuAUpJneS14kzC9cEcebdUH0sq8MwnJnY06wsNFFjbaz9dLPsgazHWP2svbylwgCYpo0QcPZb/8OPDJiok27j5139WuYeYaMcr1zyJ2s+wVs/P2hIoO54TxGW/W4yDG9a/Fi2L4rXFcp7sOjW9S8MyFEVBJBJBMOg4iQNqjPTKZaUn2bxVHVkyg3TouXulb94tpLNikolEAgMDu4OWiXeEniM5tHvWGGK8JVQIzrNzc/ss79iVH/a0qaqKXC63hyiDJxGN9WNyasVzTA4+OFtrxWTT+kK+ZCcvF+9mxUilUjZhL/T09MBrTMYXN++yBDKoECwDkwJHp9lqxVLwWv5MJmObF+zNZHm9ZB+fHjasB2lUAbf4JqKt2exX53Z/VBwEqwHrtVS5SZsBO2HPkcUP5JNCdnTkdW2/KK4VXH0lh+f3HAT9QiarBpTHcosLMUVtU1BvcFBRCjTpliqkytMWQz7WmJRzz3BOFXmwbmAp9fZ9btItn8GqHryx6LdOeorVkzB79LXuafPPja19ixQ/aCzRNkGEO4IvjptjUuVUKXjnG/zwtr30RJQ9aqBGHPBov0+W+frOaoCOOKGAUjqyvUiOpL7HW2+nLUqJI3COLPdRB/j5r0slS1JVFdFEuddGFZb8BwjXDVw2sjYzlPApj3KVP4oa9FktWRecIjRhx0Wbip2DHy8z7/c6HhEeAlmXG/sO7437AAAAAElFTkSuQmCC"></img> </button>
         <button id="Happy" onClick={Happy}> <img id="IMGHappy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAgCAYAAACVU7GwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAURSURBVHgBtVhfTFtVGP+VzdDEOS4+CA8KF5KZGBktMTPGSXbrJHETTQ1kyYSkKk+yhxYfFPWh5WW6p5aHMfbUNhnGB5e2cWP+IbaEaUyMobDocA9w2/gg2UNvl5gUF1a/79DWC+29tAV+yZd7zj3nfP3d75zvd84pUD8kMhkHAEsNfRUyJ9mpZqlRbjpqleS2JqjpLLIPclpG20hS2xJZiCyJPaAaUm4yj/JKm+wa7oaz/1lITdayTsnldSTvrCN8bRmJ22kmFSALV3KYP3fOi3zeQ0Wt0I8/ViZT8fDhe2ak7GQR9+gJ2fdpb0UiRuDo+S4uIDyzHKXqmPixIqHBQQUWS9xw8KNHkw0GTW6amsX47JAcuNRXEyEGT2touh/B6X7nsc5mJmAvNVossulgi8VWiZTXfrwlsPjzCJTeduwF7w514/tv3pH5A7G1JilUedV0UD6/tHP6nEQoEr81VHN0zMDTefqNGW1V1RxUTeYHBgJoaHBX6kpryqGPlEyh9ke+GtxXQsIxTef1mQGWkAhYSjY3fSjPUEHIEo2qelK+zz46yaHGQcDe3QLfJ70yFT30wxoT0BErEeJKcfoUSvl4/NawqIRmlhG7cU+UWQJctDZqgabl4Pt8AbGb90SUglf6IbdL0LI5dHZdZk3rwJYcgKbSSZFLCKIFHCo8fZQpdh44Qc7GPp5D7t8ncOXq12h9+lWs/BEn50dQLZ574Sq+m1uF2zOOwGQY3/54H9LjabS2HEEut2klHdugbgnuO3H37srEykpOP56nj5XZVcy0EImfiJDTCbvdLiw6ex/VIrGQEgubwWMlSaLnS5ic+lW8c184wQ+XmY/D4KnTpX7RYSgUgizLUFUVsdg8Ahe7UCvGxsaQSqWEL+Xlx8Q7TiKlt01OLKRl6ERVD46UnTqVXhTLmqbB4/EgEAjUpFe8oKWmRlHmD2IfyWRSvC/1OS7KNiMfTEpu12VccPpN6DOQEgD+S6+hWnAk4rPDJR9M0P9F37ZkKbR1GPng6WuX26RtA9Z+vwA1VUoGkU1s1RNrxOJPIyLbJMlapntNkqhLZqQqgjMxduNPOM9fRz3gLYYyGvWApy+lprWKjbbuVtSLwrqpiOxW1DWjdo6UlkpRxvWWN/JU8lRo2Q2YQVEUkalsDE6OUybJUcjwNaN2jlSCD2dG8Iy+aNjmdruRyWQQj8cRDAbh9XrhcrkgHc1Ttj1lOK7we0tG7bzNSLQQM5m/PqzYgRdrx/OXy6IViUSEwG7rSzLS09OD4NRJQxnhBOromlJhkn0Nwlc2l2AlroRiihe1h+H3+8sIsSY5HA64zj9jqmu0xfAjDBP8vyH30oY8O2zYkdeB48w1aA8s8Pl8sNlsIjKs2NFoFOrqosi23YSWo06+OErqbqQYRGpI2c0pR3R+IV3SMbutBTbKtGpUnzd7OrtPUNFn1k9PSu6UpcXfbr8v7fchj6FbSz0wkQOG/pCn0nF1wnF2BgdB6HT/l0zEsRshxqEd9V/+Xv/HsnRnXXm9rxNW62HsFUyIP3Qtlf0AhTPUbjC69/lIOL20xsR2Uy94/Y2M3uQLw9vVEmIcMvJHujRPBzPFYhGHQLGxVguOjmf8B4yNzyUyWu4MarzGV3Nt9zzZbHW/dfaYzMcP3tMqEeRTRJTO5HQrpgilVWxlWBh1oJY/OJwFs9GBzV4UU1Z6Vn01lVWpGiPjq3oCe0AtpHZC1pVV7CP+A4U0/mODqjPgAAAAAElFTkSuQmCC"></img> </button>
         <button id="Anxious" onClick={Anxious}> <img id="IMGAnxious" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAiCAYAAAApkEs2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVUSURBVHgB1VhBbNtUGP7tTtouqM6FHZBadwdOa5ccikAiqgucYKie4ICUSUk5USbR7ITKJc5lFQfU9NBqHCCpROGCSCu6gcRYUnUSEhOa2woJdqBOTxQOdbisk1jM9z/bmZcmTZymSPukp2e/OM/f+9//f//vR/SUQKLwUNE0rx/0xqpoO2ibaCaaTT1Gp0QVtGm0VHT4WXUsPkhDg/3U33+m/kClUiVza4/KdypkVx+uYGgJbYV6hHZEBcGIcjr9wdQLSvrKKCkBcq2wsvY7zS/cBeldC7eXyLVyS2h5h98TLU9KZeqCaBStOP3+qGp8FO+IYCPM7T269M7XZO1WDdxmg7+9UnCK/I6aQzFZopJ3Pd6KbCuiyXOqkvts8Q1Fiw/ScWFc26Ds7AZbdZw8/wVRh/uaRLrsUI7Y5x26WiMq90k098gRC7NkuBvGcqeazKurA/2FH28kCD31ArwjQBRkSz5ZsLRhJUWuUcSRSPEthj6N3zRY2XK8wMVCbLlhThWWzJe+u9wzkkGymZk4u9OcN2R6zOYkNxaIrUmPCav+OPGCGuYrfTL7mtJrkkGyWnwgRWw1bLPjuoEgg/t5+KcpeQtwXAmMigXIdC9INJVKjKj6xefpJJG//iZBRTIgZYFcDIyy8NMUiBmCFFEB15b/PK7NclJaDQbTzs6vV9STsmYQWQSXMbvBwWLwPQKLk4WKqB/iBUCuVA4iSab9RzVawpjtE2Vr5vPXL9YnY/G2qwfCV9VBhbqFbR/Qyo37Yh5fQXjec+cX7H37YcQj6ioA5EmWaQxm1D2pqmc4P+qTycSwuLAqNo2/vszaJ+75BcWv3qboyFkKC0S5kCYf8E8q3bwsNPnC8FmlvLGrUSCABBzXyrCojq7gD7OPcvBo/mqxJYKkoigwcwpPRARxtkIY8IJ9kpqmka7rBGJi2xnJxAh3usvN1VbZlSMBBNB+cD62aDRorU1sOVvRMDKUBFHbhoXxIqvyD6zaeXZC+hTz8IJLt4tiLJe7QJu/uNeeYca8xznSNWhSvj5BTRQ4dbCPpoyZeD7jivL/CumZa2zJCIInKiGN1nUTSnB7UjKCz7JF1TB5vLxRofnFu6JHlSTGlP7TwocRkP6WdgRYXGE3Y/0E2Zjj6qbdLN+f8l/UDhy9V2duUeGLrcO/gTD7Hzf2y9LNRGilYFmigH42QvZf1A6TU2tNSTaCLSRUo9Lb2pmJWtbu0ZMWlrdQY95v+hsHSyaToVKphIyxI1pyMi0W1g5YVMer4a03uW48CtmAFgbBkpPP5wXZIAzDoPH1deHHrcpEc+tP0VGHEBbd3P675cr4Zb74BzE9PU3FYvEQyeAiVlvsAmMd/kz0pAS1I4pU9sBkQs3AutoIVVWF1Y7CxMSECK5W4LRKIb6p/BSaRbrTmm2Tuf3XoTFOArFYjNrB3q82HedAwyIsakyfR+CJ6gmyojaS5dTJ0tQtmslU6r1vaWl5O0Xul2pHCBLVUTQUuWg4SbA1h84vWrgcCvO/vsD1bwgaLaKcUV8cfY5OArwzL726xLrNn9BWmP82fopMpj/8wWoVWMcFayuMwQVzmUKikaiFNv5W4hvL3NqjXoJJImnMk1fVh0VfkzH7wcG/q59+fk9HRXPs73q/EP/+1h9MMk1doq/FOCeAVUhIZP1OJaq9PABhD3dSwv748dxP9O7Umo3tnqEuLemjk0OyFFoGX6cql3DtSLMFl77cptzCzxw0BXKPciw6JsIcO+pem4CMKVzDRofdLwMuargC45rBqlQ5f6+i8TFNz0qobs5HGVzgqvT4JIPBBC06gbNRxn9cMDhQ3bKZjgAAAABJRU5ErkJggg=="></img> </button>
@@ -474,23 +470,29 @@ useEffect(() => {
                   return(
                   <Card id={a.id} className="emotion">
                       <Card.Img src={a.iurl} />
-                  <button id="deleteButton"  onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} style={{height:20, width:22}} alt="Delete" /></button>
+                  <button className="deleteButton" onClick={()=>{deleteNoteEleFromDB(a.id)}}><img src={DeleteButton} alt="Delete" /></button>
                   </Card>
                   )
                 }
                 })}
                 {/*<input type="file" onChange={handleChange}/> */}
                 
-                <div className="file-input">
-                  <input className="file" type="file" onChange={handleChange}/>
-                  <label for="file">Select Image</label>
-                </div>
+                <button className="addTextBox" onClick={textNote} > <img src={AddNote} alt="Add Note" /></button> {/*add button*/}
                 
-                <div className="file-input" >
-                  <input className="file" type="submit" onClick={filePost}/>
-                  <label for="submit">Submit</label>
+                <div className="sbs">  
+                  <div className="file-input">
+                    <input className="file" type="file" onChange={handleChange}/>                         {/*select file */}
+                    <label for="file">Select Image</label>
+                  </div>
+                
+                  <div className="file-input" >
+                    <input className="file" type="submit" onClick={filePost}/>                         {/*submit file */}
+                    <label for="submit">Post Image</label>
+                  </div>
                 </div>
-                <button className="addTextBox" onClick={textNote}><img src={AddNote} alt="Add Note" /></button>
+
+                
+          </div>
         </Container>
     )
 }
