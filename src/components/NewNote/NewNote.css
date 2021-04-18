@@ -139,3 +139,6 @@ border: none;
     background-color: transparent;
     border-color: transparent;
 }
+.sbs{
+    display: inline-flex;
+}
