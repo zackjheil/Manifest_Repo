@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Manifest_Repo/static/css/main.395fa782.chunk.css",
+    "main.js": "/Manifest_Repo/static/js/main.55928447.chunk.js",
+    "main.js.map": "/Manifest_Repo/static/js/main.55928447.chunk.js.map",
+    "runtime-main.js": "/Manifest_Repo/static/js/runtime-main.c9f39240.js",
+    "runtime-main.js.map": "/Manifest_Repo/static/js/runtime-main.c9f39240.js.map",
+    "static/css/2.17052618.chunk.css": "/Manifest_Repo/static/css/2.17052618.chunk.css",
+    "static/js/2.ff0e6efd.chunk.js": "/Manifest_Repo/static/js/2.ff0e6efd.chunk.js",
+    "static/js/2.ff0e6efd.chunk.js.map": "/Manifest_Repo/static/js/2.ff0e6efd.chunk.js.map",
+    "static/js/3.1d8e5589.chunk.js": "/Manifest_Repo/static/js/3.1d8e5589.chunk.js",
+    "static/js/3.1d8e5589.chunk.js.map": "/Manifest_Repo/static/js/3.1d8e5589.chunk.js.map",
+    "index.html": "/Manifest_Repo/index.html",
+    "service-worker.js": "/Manifest_Repo/service-worker.js",
+    "service-worker.js.map": "/Manifest_Repo/service-worker.js.map",
+    "static/css/2.17052618.chunk.css.map": "/Manifest_Repo/static/css/2.17052618.chunk.css.map",
+    "static/css/main.395fa782.chunk.css.map": "/Manifest_Repo/static/css/main.395fa782.chunk.css.map",
+    "static/js/2.ff0e6efd.chunk.js.LICENSE.txt": "/Manifest_Repo/static/js/2.ff0e6efd.chunk.js.LICENSE.txt",
+    "static/media/AddButton.da021869.svg": "/Manifest_Repo/static/media/AddButton.da021869.svg",
+    "static/media/Boards_Icon.ee7fa764.svg": "/Manifest_Repo/static/media/Boards_Icon.ee7fa764.svg",
+    "static/media/DeleteButton.77780be7.svg": "/Manifest_Repo/static/media/DeleteButton.77780be7.svg",
+    "static/media/Info_Icon.d8beba3b.svg": "/Manifest_Repo/static/media/Info_Icon.d8beba3b.svg",
+    "static/media/ManifestJingle.aeaf88a5.mp3": "/Manifest_Repo/static/media/ManifestJingle.aeaf88a5.mp3",
+    "static/media/Manifest_Logo.f3f8e107.svg": "/Manifest_Repo/static/media/Manifest_Logo.f3f8e107.svg",
+    "static/media/Note_Icon.978b24a1.svg": "/Manifest_Repo/static/media/Note_Icon.978b24a1.svg",
+    "static/media/Settings_Icon.85264ec2.svg": "/Manifest_Repo/static/media/Settings_Icon.85264ec2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9f39240.js",
+    "static/css/2.17052618.chunk.css",
+    "static/js/2.ff0e6efd.chunk.js",
+    "static/css/main.395fa782.chunk.css",
+    "static/js/main.55928447.chunk.js"
+  ]
+}
