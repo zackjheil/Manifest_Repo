@@ -1,0 +1,11 @@
+.settingsButtons{
+    text-align: center;
+    margin: 5%;
+}
+#eraseButton{
+background-color: rgb(155, 0, 0);
+}
+
+#updateButton{
+    background-color: rgb(0, 139, 12);
+}

@@ -1,0 +1,150 @@
+.LNote{
+    width:100%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-color: white;
+    color: white;
+    padding-bottom: 15px;
+
+}
+.Header{
+    width:100%;
+    resize:none;
+    text-align: left;
+    font-size: 48px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-color: white;
+    color: white;
+}
+
+.deleteButton{
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    color: transparent;
+    border: transparent;
+    margin-left: auto;
+    display: table;
+   
+}
+
+.addTextBox{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+    color: transparent;
+    border: transparent;
+    margin-right: auto;
+    margin-left: 0%;
+}
+
+.picture.card{
+
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    padding-bottom: 20px;
+}
+
+.file
+{
+    opacity: 0;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+}
+
+.file-input
+{
+    display: block;
+    position: relative;
+    width: 125px;
+    height: 50x;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    font-size: medium;
+    margin: 10px;
+}
+
+/* Watch the id uses. Only use ids if it is unique and an address that needs to be linked to.  */
+#Poppy{
+    height: 2050px;
+    width: 1010px;
+}
+
+.emotion.card{
+    max-width: 35px;
+    max-height: 35px;
+    scale: 1%;
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+    padding-bottom: 80px;
+    position: absolute;
+    top: 22.5%;
+    left: 81.5%;
+}
+
+
+/* *** height and width are defined twice, remember that css is cascading linearly. */
+#deleteButton{
+background-color: transparent;
+border-color: transparent;
+position:absolute;
+top: 0%;
+bottom: 5px;
+left: 68%;
+width: 10px;
+height: 10px;
+max-width: 10px;
+max-height: 25px;
+
+}
+
+#PopoverClick{
+    display: block;
+    position: relative;
+    width: 130px;
+    height: 45px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    font-size: medium;
+    margin: 5px;
+}
+#Poppy1{
+    background-color:  transparent;
+    border-color: transparent;
+}
+#IMGAngry{
+background-color: none;
+border-color: none;
+border: none;
+}
+
+#Poppy2{
+    background-color: transparent;
+    border-color: transparent;
+}
+.sbs{
+    display: inline-flex;
+}
+
+/* *** clean up this last section. There are lots of ids for IMG... that are not used.  */
